@@ -611,19 +611,19 @@
         });
 
         // Optional: Re-trigger animation on scroll (Intersection Observer)
-        const observer = new IntersectionObserver((entries) => {
+        const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     animateCounter(document.getElementById('stat1'), 28, 2000);
                     animateCounter(document.getElementById('stat2'), 130, 2000);
                     animateCounter(document.getElementById('stat3'), 2000, 2000, true);
                     animateCounter(document.getElementById('stat4'), 4, 2000);
-                    observer.unobserve(entry.target);
+                    counterObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
 
-        observer.observe(document.querySelector('.bg-gradient-to-r'));
+        counterObserver.observe(document.querySelector('.bg-gradient-to-r'));
     </script>
 </div>
 
@@ -1137,7 +1137,7 @@
 
         // Observe the statistics section
         const statsSection = document.querySelector('section');
-        observer.observe(statsSection);
+        counterObserver.observe(statsSection);
     </script>
 
     <script>
