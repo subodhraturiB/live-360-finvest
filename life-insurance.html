@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Insurance</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body >
+
+      <div class="blue-gradient w-full pb-1">
+      <nav class="flex  items-center justify-between container mx-auto pt-5 px-4">
+        <div class="flex items-center gap-4">
+          <img class="w-28 md:w-[10vw]" src="./images/logo.png" alt="360finvest_logo" />
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex gap-8 font-semibold text-white items-center">
+          <a href="/index.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Home</a>
+          
+          <!-- Replace the existing Loans link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Loans 
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 w-48 z-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/personal-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Personal Loan</a>
+                <a href="/home-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home Loan</a>
+                <a href="/bussiness-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Business Loan</a>
+                 <a href="/loan-aginst-property.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Loan Against Property</a>
+                
+              </div>
+            </div>
+          </div>
+           <!-- Replace the existing Insurance link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Insurance
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 z-10 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/life-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Life Insurance</a>
+                <a href="/health-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Health Insurance</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/emi-Calculater.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">EMI Calculater </a>
+          <a href="/aboutus.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">About Us </a>
+          <a href="/blog.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Blogs </a>
+          <a href="/contact.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Contact </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <button class="flex text-black px-6 gap-2 py-3 rounded-full font-semibold bg-white">
+            Apply Now
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobileMenuButton" class="md:hidden text-white p-2 rounded-md focus:outline-none" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="fixed inset-y-0 right-0 z-50 w-3/4 max-w-xs bg-blue-800/95 text-white transform translate-x-full transition-transform duration-300 md:hidden">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+              <img class="w-28" src="./images/logo.png" alt="logo" />
+              <button id="mobileMenuClose" class="p-2 focus:outline-none" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Replace the existing mobile menu nav section with this: -->
+            <nav class="flex flex-col gap-4">
+              <a href="/index.html" class="block py-2 px-1 text-white font-medium">Home</a>
+              
+              <!-- Loans Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Loans
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/personal-loan.html" class="block py-2 text-gray-300 hover:text-white">Personal Loan</a>
+                  <a href="/home-loan.html" class="block py-2 text-gray-300 hover:text-white">Home Loan</a>
+                  <a href="/bussiness-loans.html" class="block py-2 text-gray-300 hover:text-white">Business Loan</a>
+                  <a href="/loan-aginst-property.html" class="block py-2 text-gray-300 hover:text-white">Loan Against Property</a>
+                </div>
+              </div>
+
+              <!-- Insurance Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Insurance
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/life-insurance.html" class="block py-2 text-gray-300 hover:text-white">Life Insurance</a>
+                  <a href="/health-insurance.html" class="block py-2 text-gray-300 hover:text-white">Health Insurance</a>
+                </div>
+              </div>
+
+              <a href="/emi-Calculater.html" class="block py-2 px-1 text-white font-medium">EMI Calculator</a>
+              <a href="/aboutus.html" class="block py-2 px-1 text-white font-medium">About Us</a>
+              <a href="/blog.html" class="block py-2 px-1 text-white font-medium">Blogs</a>
+              <a href="/contact.html" class="block py-2 px-1 text-white font-medium">Contact</a>
+
+              <div class="mt-4">
+                <button class="w-full bg-white text-blue-800 py-2 rounded-full font-semibold">Apply Now</button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+      <!-- Banner Section -->
+  <section class="relative h-[350px]  blue-gradient overflow-hidden flex items-center justify-center
+                lg:rounded-b-[100px] md-rounded-b-none">
+
+
+
+    <!-- Left Pattern -->
+    <img src="./images/h1_bg-left.png" alt="Left Pattern"
+         class="absolute -left-40 top-[60%] -translate-y-1/2 h-[150%] lg:w-[700px] md:w-[400px] max-[640px]:w-[300px] object-contain">
+
+    <!-- Right Pattern -->
+    <img src="./images/h1_bg-right.png" alt="Right Pattern"
+         class="absolute -right-40 top-[60%] -translate-y-1/2 h-[150%] lg:w-[700px] 
+         md:w-[400px] max-[640px]:w-[300px] object-contain">
+
+    <!-- Content -->
+    <div class="relative z-10 px-4 text-center">
+      <h1 class="lg:text-[64px] md:text-[50px] max-[640px]:text-[32px] text-white font-bricolage font-bold mb-3">Life Insurance</h1>
+      <nav class="flex justify-center items-center space-x-2 text-[16px] font-dmsans">
+        <a href="#" class="text-breadcrumbGray text-white hover:text-cyan-600 transition">Home</a>
+        <span class="inline-flex items-center justify-center text-cyan-500">•</span>
+        <span class="text-[16px] text-cyan-500">Life Insurance</span>
+      </nav>
+    </div>
+
+  </section>
+
+
+<div class="max-w-7xl mx-auto px-4 py-8 mt-20">
+
+
+
+
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+  <h1 class="text-4xl md:text-5xl font-bold mb-6">
+    Get an Instant <span class="text-cyan-600"> Life Insurance </span>  Quote Online
+  </h1>
+
+  <p class="text-gray-700 text-lg max-w-5xl mx-auto">
+                Get affordable Life Insurance plans from top insurers now. Save tax under Section 80C while securing your family’s financial future. Enjoy benefits like coverage for critical illness, terminal illness, and accidental death. Ensure lifelong protection and peace of mind for your loved ones. Get your FREE quote now!
+            </p>
+  
+</div>
+
+
+        <!-- Application Form Section -->
+        <div class="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8 md:p-12 mb-16">
+            <div class="grid md:grid-cols-2 gap-12 ">
+
+                <!-- Left Side - Illustration -->
+                 <div class="flex justify-center">
+                    <div class="relative">
+                       <img class="size-3xl h-full lg:object-cover rounded-2xl" src="./images/life-insurance.jpg" alt="">
+                    </div>
+                </div>
+
+
+                <!-- Right Side - Form -->
+                <div>
+                   
+
+                    <form class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label class="block text-gray-800 font-semibold mb-2">
+                                Full Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" placeholder="Full Name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-800 font-semibold mb-2">
+                                Email ID <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" placeholder="Personal E-mail ID" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-800 font-semibold mb-2">
+                                Mobile Number <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" placeholder="Personal Phone Number" required pattern="[0-9]{10}"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none">
+                        </div>
+
+                        <!-- Date of Birth -->
+    <div class="relative">
+        <label class="block text-gray-800 font-semibold mb-2">
+                                Date of Birth <span class="text-red-500">*</span>
+                            </label>
+  <input
+    type="text"
+    id="dob"
+    name="dob"
+    placeholder="Select your date of birth"
+    required
+    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+    onfocus="(this.type='date')"
+  />
+  
+</div>
+
+
+
+                        <div class="text-sm text-gray-700">
+                            I accept the <a href="#" class="text-teal-600 hover:underline">Privacy Policy and Terms and Conditions</a> of 360 Finvest and agree to receive communications from MMM and its partners via SMS, email, and WhatsApp. I appoint 360 Finvest as authorized representative to receive my credit information from Experian for the purpose of providing access to credit & targeted offers ('End Use Purpose') as defined in given <a href="#" class="text-teal-600 hover:underline">Terms and Conditions</a>.
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-6 rounded-lg transition duration-300 text-lg">
+                            Get a Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<!--  policy benefits   -->
+
+ <div class="w-full">
+
+  <!-- Accordion Container -->
+  <div class="w-full border border-gray-300 rounded-lg bg-gray-50 overflow-hidden">
+    <!-- Header -->
+    <button 
+      class="w-full flex justify-between items-center px-6 py-4 focus:outline-none"
+      onclick="toggleAccordion(this)"
+    >
+      <h2 class="text-4xl font-bold text-center mb-12 ml-6 mt-4">
+        <span class="text-cyan-600">Life Insurance Benefits</span> You can count on!
+      </h2>
+
+      <!-- Arrow (up when open) -->
+      <svg class="w-5 h-5 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 15l-7-7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Content (Initially Open) -->
+    <div class="px-6 pb-6" style="display: block;">
+      
+      <ul class="list-disc list-outside ml-4  marker:mr-6 space-y-4 text-gray-700 text-lg">
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Cover for life :</span>Insurance provides a life cover to the insured to the extent of the sum assured. This gives financial security for the family of the insured in case of any eventuality.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Steady investment :</span>Life Insurance is an investment option that gives significant returns for the premiums that are paid during the tenure of the policy. Some of the insurance plans give a considerable return for your investment which will not only help you to fulfill your investment goals, but will also keep your family financially secure in case of any eventuality.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Income assured by way of annuities :</span>Annuity plan could be the best retirement plan because you get steady income by way of annuities. This will work as a pension for persons who do not have the benefit of pension.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">High returns for low cost :</span>For the nominal premium that is paid the insurance policies fetch you very significant returns. In the case of term plans the returns could be almost 10 times the amount of premium that is paid during the term of the policy. No other instrument in the market will fetch you such high returns.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Tax benefit :</span>You can avail a tax benefit for the premiums that are being paid towards the insurance policy under Section 80C of the Income Tax Act 1961.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Riders :</span>Riders like critical illness, permanent disability due to an accident, hospital cash are some of the added covers that can be bought along with the base plan. For an additional premium, these covers can be bought which will eventually be of benefit if you encounter any of these events in the future.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Planning for Goals :</span>There are certain goals you set for your life. It could be the wedding of your children, the education of your children, and so on. The nominal investments made by way of premium towards the Life Insurance policy will not only protect your family against any eventuality or loss of income but will also enable you to fulfil your goals with the significant returns that you get on the maturity of the policy.</li>
+
+        <li class="pl-3"><span class="font-bold text-[#000] mr-3 ">Availability of loan :</span>There is an option to avail loan up to the surrender value of the insurance policy. Most of the policies offer this benefit. So, in case of emergency, you can avail a loan to the extent of 95% or the surrender value from any bank/financial institution. The surrender value of the policy can be obtained from your service provider.</li>
+
+        
+
+      </ul>
+
+ 
+
+    </div>
+
+
+     
+
+  </div>
+</div>
+
+
+
+
+<!-- Comparison table  -->
+
+<div class="w-full mt-20">
+
+  <!-- Accordion Container -->
+  <div class="w-full border border-gray-300 rounded-lg bg-gray-50 overflow-hidden">
+    
+    <!-- Header -->
+    <button 
+      class="w-full flex justify-between items-center px-6 py-4 focus:outline-none"
+      onclick="toggleAccordion(this)"
+    >
+      <h2 class="text-4xl font-bold text-center ml-6 mt-6">
+        <span class="text-cyan-600">Term Life vs Whole Life Insurance</span> : What's right for You?
+      </h2>
+
+      <!-- Arrow -->
+      <svg class="w-6 h-6 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 15l-7-7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Accordion Content -->
+    <div class="px-6 pb-8 flex justify-center items-center min-h-[500px] mt-14 mb-10">
+      <div class="overflow-x-auto w-full flex justify-center">
+        <table class="w-full md:w-3/4 border border-gray-300 rounded-lg text-gray-700 text-lg shadow-sm">
+          <thead class="bg-cyan-600 text-white text-xl">
+            <tr>
+              <th class="py-3 px-4 text-left rounded-tl-lg hidden sm:table-cell">Feature</th>
+              <th class="py-3 px-4 text-left sm:w-auto w-1/2">Term Life Insurance</th>
+              <th class="py-3 px-4 text-left rounded-tr-lg sm:w-auto w-1/2">Whole Life Insurance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Purpose</td>
+              <td class="py-3 px-4">Provides pure life coverage for a specific term to protect dependents financially in case of death.</td>
+              <td class="py-3 px-4">Offers lifelong coverage and builds cash value over time along with death benefits.</td>
+            </tr>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Coverage Duration</td>
+              <td class="py-3 px-4">Covers you for a fixed period (e.g., 10, 20, or 30 years).</td>
+              <td class="py-3 px-4">Provides coverage for the entire lifetime of the insured.</td>
+            </tr>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Premiums</td>
+              <td class="py-3 px-4">Lower premiums compared to whole life insurance.</td>
+              <td class="py-3 px-4">Higher premiums due to lifelong coverage and investment component.</td>
+            </tr>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Maturity Benefit</td>
+              <td class="py-3 px-4">No payout if the policyholder survives the policy term (pure protection plan).</td>
+              <td class="py-3 px-4">Offers maturity benefit as policy builds cash value over time.</td>
+            </tr>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Cash Value</td>
+              <td class="py-3 px-4">Does not accumulate any cash value.</td>
+              <td class="py-3 px-4">Part of the premium is invested and builds cash value that can be borrowed or withdrawn.</td>
+            </tr>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Best Suited For</td>
+              <td class="py-3 px-4">Individuals looking for affordable, high-coverage life protection for a specific period.</td>
+              <td class="py-3 px-4">Individuals seeking lifelong protection plus savings/investment growth.</td>
+            </tr>
+            <tr class="border-t text-lg">
+              <td class="py-3 px-4 text-[#000] font-semibold hidden sm:table-cell">Tax Benefits</td>
+              <td class="py-3 px-4">Premiums deductible under Section 80C; payouts exempt under Section 10(10D).</td>
+              <td class="py-3 px-4">Premiums deductible under Section 80C; maturity benefits also exempt under Section 10(10D).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--   Health Insurance Plans-->
+
+<div class="mb-8 mt-20">
+  <!-- Heading -->
+  <h2 class="text-4xl font-bold text-center mb-12">
+    Explore Comprehensive <span class="text-cyan-600"> Life Insurance </span> Plans
+  </h2>
+
+  <!-- Toggle Buttons -->
+  <div class="flex justify-center space-x-4 mb-8">
+    <button 
+      class="tab-btn bg-cyan-500 text-white text-lg px-6 py-2 rounded-3xl font-semibold hover:bg-cyan-700 hover:text-[#fff] active"
+      data-target="section1"
+    >
+      Term Insurance
+    </button>
+    <button 
+      class="tab-btn bg-cyan-500 text-gray-700 text-lg px-6 py-2 rounded-3xl font-semibold hover:bg-cyan-700  hover:text-[#fff] "
+      data-target="section2"
+    >
+      Investment Plans
+    </button>
+    
+  </div>
+
+  <!-- Content Sections -->
+  <div id="loanCards" class="space-y-6">
+    <!-- Section 1 -->
+    <div id="section1" class="tab-section">
+      
+    </div>
+
+    <!-- Section 2 -->
+    <div id="section2" class="tab-section hidden">
+      
+    </div>
+
+    <!-- Section 3 -->
+    <div id="section3" class="tab-section hidden">
+     
+    </div>
+  </div>
+</div>
+
+        <!-- Header Features -->
+    <header class="footer-header">
+    <div class="container  mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="./images/logo.png" alt="360 Finvest Logo" class="h-12">
+            </div>
+            
+            <!-- Features -->
+            <div class="hidden md:flex flex-wrap items-center gap-8">
+                <div class="flex items-center  space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">24/7 Support</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Weekly updates</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Secure and compliant</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">99.9% Uptime</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Footer -->
+    <footer class="fp-main-footer bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <!-- Product Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Loans</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/home-loan.html" class="fp-footer-link text-gray-600 block">Hoam Loan</a></li>
+                        <li><a href="/personal-loan.html" class="fp-footer-link text-gray-600 block">Personal Loan</a></li>
+                        <li><a href="/bussiness-loans.html" class="fp-footer-link text-gray-600 block">Bussiness Loan</a></li>
+                        <li><a href="/loan-aginst-property.html" class="fp-footer-link text-gray-600 block">Loan Against Property</a></li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+
+
+                   <!-- Resources Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Insurance</h3>
+                    <ul class="space-y-4">
+                          <li><a href="/health-insurance.html" class="fp-footer-link text-gray-600 block">Health Insurance</a></li>
+                          <li><a href="/life-insurance.html" class="fp-footer-link text-gray-600 block">Life Insurance</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/index.html" class="fp-footer-link text-gray-600 block">Home</a></li>
+                        <li><a href="/aboutus.html" class="fp-footer-link text-gray-600 block">About Us</a></li>
+                        <li><a href="/blog.html" class="fp-footer-link text-gray-600 block">Blog</a></li>
+                        <li><a href="/contact.html" class="fp-footer-link text-gray-600 block">Contact</a></li>
+                        
+                    </ul>
+                </div>
+
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Demat and Investment Tools</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/open-demat-account.html" class="fp-footer-link text-gray-600 block">Open Demat Account</a></li>
+                        <li><a href="/emi-Calculater.html" class="fp-footer-link text-gray-600 block">EMI Calculater</a></li>
+                        <li><a href="/equity.html" class="fp-footer-link text-gray-600 block">Equity</a></li>
+                        
+                        
+                    </ul>
+                </div>
+
+             
+
+             
+                <!-- Contact Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">CONTACT</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:+18341234567899" class="fp-footer-link text-gray-600  block">+91 7982894555</a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@example.com" class="fp-footer-link text-gray-600 block">info@360finvest.com</a>
+                        </li>
+                        <li class="text-gray-600 leading-relaxed">
+                           Imperia Bandhan, B-Block Office No-311, Plot no. 44-45, Sector Knowledge Park 5, Greater Noida West
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="fp-divider h-px"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm">
+                    Copyright © 2024 <span class="font-semibold text-grey-400"> 360 Finvest </span> All rights reserved
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex items-center space-x-6  text-sm">
+                    <a href="/privacy-policy.html" class="text-gray-500 hover:text-blue-500 transition-colors">Privacy Policy</a>
+                   
+                    <a href="/terms-conditions.html" class="text-gray-500 hover:text-blue-500 transition-colors">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- JavaScript for Toggle Functionality -->
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".tab-section");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Reset all buttons
+      buttons.forEach(b => b.classList.remove("bg-teal-600", "text-white"));
+      buttons.forEach(b => b.classList.add("bg-gray-200", "text-gray-700"));
+
+      // Activate clicked button
+      btn.classList.remove("bg-gray-200", "text-gray-700");
+      btn.classList.add("bg-teal-600", "text-white");
+
+      // Show the corresponding section
+      const target = btn.getAttribute("data-target");
+      sections.forEach(sec => {
+        sec.classList.add("hidden");
+        if (sec.id === target) sec.classList.remove("hidden");
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+  function toggleAccordion(button) {
+    const content = button.nextElementSibling;
+    const arrow = button.querySelector('svg');
+
+    if (content.style.display === "none") {
+      // Open
+      content.style.display = "block";
+      arrow.classList.remove('rotate-180'); // arrow points up when open
+    } else {
+      // Close
+      content.style.display = "none";
+      arrow.classList.add('rotate-180'); // arrow points down when closed
+    }
+  }
+
+  // Make sure content is initially open
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.w-full > div > div:nth-child(2)');
+    accordions.forEach(c => c.style.display = 'block');
+  });
+</script>
+
+
+ <script>
+        const personalLoan = [
+            {
+                id: 1,
+                title: "Ultimate Care",
+                loanAmount: "99.7 %",
+                interestRate: "₹ 1 Cr",
+                interestRate2: "Max limit : 85 yrs",
+                img: "./images/card_1.avif",
+                text:"Click 2 Protect Supreme",
+                premiumRate:"₹ 590/month",
+                discountPercent: "₹0.4 K",
+                paragraphs: [
+        "Option to delay 12 months premium",
+        "Early Payout On Terminal Illness",
+        "Extend your policy at Maturity"
+    ],
+                
+            },
+            {
+                id: 2,
+                title: "ReAssure 3.0 Elite",
+                loanAmount: "99.3%",
+                interestRate: "₹ 1 Cr",
+                 interestRate2: "Max Limit: 99 yrs",
+                img: "./images/card_2.webp",
+                text:"iProtect Smart Plus",
+                premiumRate:"₹ 504/month",
+                discountPercent: "₹4.0 K",
+                hospitals : 224,
+                
+                  paragraphs: [
+        "100% payout on Terminal illness",
+        "Option to delay 12 Months premium",
+        
+    ],
+            },
+            {
+                id: 3,
+                title: "Super Star",
+                loanAmount: "99.41%",
+                interestRate: "₹ 1 Cr",
+                premiumRate:"₹ 534/month",
+                interestRate2: "Max Limit: 100 yrs",
+                processingFee1: "0.5% to 2.5% + GST of loan amount",
+                tenure1: "5 Years",
+                img: "./images/card_3.png",
+                text:"Sampoorna Raksha Promise",
+                hospitals : 166,
+                discountPercent:"₹0.7 K",
+                  paragraphs: [
+        "Option to delay 12 months premium",
+        "Early payout on Terminal illness",
+        "Waiver of premium on Terminal illness",
+        
+    ],
+                
+            },
+            {
+                id: 4,
+                title: "ActivOne Smart",
+                loanAmount: "99.4%",
+                interestRate: "₹ 1 Cr",
+                interestRate2: "Max Limit: 79 yrs",
+                hospitals : 143,
+                img: "./images/card_4.webp",
+                text:"Smart Shield Plus",
+                discountPercent:15,
+                premiumRate:"₹ 556/month",
+                discountPercent:"₹0.6 K",
+                 
+                
+            },
+            {
+                id: 5,
+                title: "Optima Select",
+                loanAmount: "99.29%",
+                interestRate: "₹ 1 Cr",
+                interestRate2: "Max Limit: 85 yrs",
+                premiumRate:"₹ 403/month",
+                hospitals : 216,
+                img: "./images/card_5.avif",
+                text:"Bajaj Life eTouch II",
+                discountPercent:"₹0.3 K",
+                paragraphs: [
+        "Option to delay 12 months premium",
+        "Early payout on Terminal Illness",
+        "Waiver of Premium on Permanent Disability",
+        "Waiver of Premium on Terminal Illness"
+        
+            ]
+            },
+            {
+                id: 6,
+                title: "Elevate",
+                loanAmount: "99.7%",
+                interestRate: "₹ 1 Cr",
+                interestRate2: "Max Limit: 85 yrs",
+                img: "./images/card_6.avif",
+                text:"Smart Term Plan Plus",
+                hospitals : 132,
+                premiumRate:"₹ 551/month",
+                discountPercent:"₹0.8 K",
+
+                 paragraphs: [
+        "Early payout on Terminal illness",
+        "Waiver of premium on Terminal illness",
+        "Option to delay 12 Months Premium",
+        "LifeLine Plus(Option to increase life cover)"
+        
+            ]
+            },
+            {
+                id: 7,
+                title: "ActivOne Smart",
+                loanAmount: "99.53%",
+                interestRate: "₹ 1 Cr",
+                interestRate2 : "Max Limit: 85 yrs",
+                discountPercent:"₹0.3 K",
+                processingFee1: "1% to 3.5% + GST of loan amount",
+                tenure1: "7 Years",
+                text:"Digit Glow Plus",
+                img: "./images/card_7.avif",
+                premiumRate:"₹ 417/month",
+                hospitals : 143,
+                 paragraphs: [
+        "Option to delay 12 months premium",
+        "Early payout on Terminal Illness"
+        
+            ]
+            },
+            {
+                id: 8,
+                title: "Medicare Select",
+                loanAmount: "98.65%",
+                interestRate: "₹ 1 Cr",
+                interestRate2:"Max Limit: 85 yrs",
+                hospitals:209,
+                discountPercent:10,
+                premiumRate:"₹ 540/month",
+                img: "./images/card_8.avif",
+                text:"Super Term Plan",
+                discountPercent:"₹0.4 K",
+                paragraphs: [
+        "Early payout on Terminal illness",
+        "Option to delay 12 months premium",
+        
+            ]
+            },
+            {
+                id: 9,
+                title: "My Health Care",
+                loanAmount: "98.61%",
+                interestRate: "₹ 1 Cr",
+                interestRate2:"Max Limit: 85 yrs",
+                img: "./images/card_9.avif",
+                text:"Kotak e-Term",
+                discountPercent:"₹2.6 K",
+                premiumRate:"₹ 554/month",
+                
+                
+            },
+            {
+                id: 10,
+                title: "Flexi Health",
+                loanAmount: "99.23%",
+                interestRate: "₹ 1 Cr",
+                interestRate2: "Max Limit: 99 yrs",
+                hospitals:260,
+                img: "./images/card_10.avif",
+                text:"Young Term Plan - Life Secure",
+                premiumRate:"₹ 594/month",
+                discountPercent:"₹1.6 K"
+            },
+            {
+                id: 11,
+                title: "Health Gain",
+                loanAmount: "98.98%",
+                interestRate: "₹ 1 Cr",
+                premiumRate:"₹ 514/month",
+                interestRate2:"Max Limit: 80 yrs",
+                discountPercent:"₹3.2 K",
+                text:"Signature 3D Term Plan – Platinum",
+                img: "./images/card_11.avif",
+                hospitals:165,
+                
+            },
+            {
+                id: 12,
+                title: "Individual Health Protector",
+                loanAmount: "99.23%",
+                interestRate: "₹ 1 Cr",
+                interestRate2 : "Max Limit: 100 yrs",
+                tenure1: "4 Years",
+                img: "./images/card_12.avif",
+                text:"Zindagi Protect Plus",
+                hospitals:87,
+                premiumRate:"₹ 573/month",
+                discountPercent:"₹0.2 K"
+                
+            },
+        ];
+
+ const investmentPlans = [
+  {
+    id: 1,
+    title: "Wealth Secure",
+    interestRate: "12.69%",
+    interestRate2: "Opportunities Fund",
+    interestRate_2: "₹66.1 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_101.avif",
+    text: "SBI Life-eWealth Plus",
+  },
+  {
+    id: 2,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "14.5%",
+    interestRate2: "Opportunities Fund",
+    interestRate_2: "₹84.9 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_102.webp",
+    text: "Click2Invest",
+    
+  },
+  {
+    id: 3,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "22.69%",
+    interestRate2: "High Growth Fund",
+    interestRate_2: "₹2.78 Cr",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/catd_103.avif",
+    text: "Online Savings Plan",
+    
+  },
+  {
+    id: 4,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "12.69%",
+    interestRate2: "Opportunities Fund",
+    interestRate_2: "₹66.7 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_104.avif",
+    text: "EzyGrow - Wealth",
+    
+  },
+  {
+    id: 5,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "17.9%",
+    interestRate2: "Top 200 Fund",
+    interestRate_2: "₹1.4 Cr",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_105.avif",
+    text: "Smart Fortune Plus-Wealth Secure",
+    
+  },
+  {
+    id: 6,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "14.33%",
+    interestRate2: "Opportunities Fund",
+    interestRate_2: "₹85.4 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_106.avif",
+    text: "Accelerator Mid-Cap Fund II",
+    
+  },
+  {
+    id: 7,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "15.54%",
+    interestRate2: "Multiplier Fund",
+    interestRate_2: "₹1 Cr",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_107.avif",
+    text: "Wealth Smart Plus",
+    
+  },
+  {
+    id: 8,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "14.12%",
+    interestRate2: "Frontline Equity Fund",
+    interestRate_2: "₹82.3 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_108.avif",
+    text: "E-Invest Plus",
+    
+  },
+  {
+    id: 9,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "14.99%",
+    interestRate2: "Virtue II Fund",
+    interestRate_2: "₹95.5 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_109.webp",
+    text: "Mera Wealth Plan",
+    
+  },
+  {
+    id: 10,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "19.6%",
+    interestRate2: "Nifty Alpha 50 Index Fund",
+    interestRate_2: "₹1.91 Cr",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_110.avif",
+    text: "Promise4Growth Plus - Wealth",
+    
+  },
+  {
+    id: 11,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "12.69%",
+    interestRate2: "Opportunities Fund",
+    interestRate_2: "₹66.1 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_111.avif",
+    text: "Smart Invest 1 UP",
+    
+  },
+  {
+    id: 12,
+    title: "Future Builder",
+    loanAmount: "Tax-saving",
+    interestRate: "13.68%",
+    interestRate2: "Accelerator Fund",
+    interestRate_2: "₹74.8 L",
+    interestRate2_2: "If you had invested 20 Yrs ago",
+    img: "./images/card_113.avif",
+    text: "iInvest Advantage Plan",
+    
+  },
+  
+];
+
+        
+
+        function formatLabel(key) {
+            const labels = {
+                processingFee2: "Processing Fee",
+                age: "Eligible Age",
+                prepaymentCharges: "Prepayment Charges",
+                tenure2: "Tenure",
+                foreclosure_charges: "Foreclosure Charges",
+                minimumIncome: "Minimum Income",
+                interestRate: "Interest Rate",
+                loanTenure: "Loan Tenure",
+                preclosureCharges: "Preclosure Charges",
+                forClosureCharges: "Foreclosure Charges"
+            };
+            return labels[key] || key;
+        }
+
+        function toggleDetails(id) {
+            const detailsDiv = document.getElementById(`details-${id}`);
+            const button = document.getElementById(`btn-${id}`);
+            
+            if (detailsDiv.classList.contains('hidden')) {
+                detailsDiv.classList.remove('hidden');
+                button.textContent = 'Detailed Offers −';
+            } else {
+                detailsDiv.classList.add('hidden');
+                button.textContent = 'Detailed Offers +';
+            }
+        }
+
+      
+
+function renderLoanCards(targetId, dataArray) {
+  const container = document.getElementById(targetId);
+  container.innerHTML = ''; // Clear existing cards
+
+  // Top div only for Investment Plans
+  if (targetId === 'section2') {
+    const topDiv = document.createElement('div');
+    topDiv.className = 'bg-white text-center p-4 rounded-lg mb-10 mt-6 shadow-lg md:w-[70%] sm:w-[100%] mx-auto flex justify-between items-center text-sm';
+    topDiv.innerHTML = `
+      <div class="flex-1 text-sm text-gray-500">
+        You Invest: <span class="text-[#006FF9] text-md font-semibold">₹10,000/month</span>
+      </div>
+      <div class="text-gray-500 px-2 text-2xl">|</div>
+      <div class="flex-1 text-sm text-gray-500">
+        Invest For: <span class="text-[#006FF9] text-md font-semibold">10 Years</span>
+      </div>
+      <div class="text-gray-500 text-2xl px-2">|</div>
+      <div class="flex-1 text-sm text-gray-500">
+        Age: <span class="text-[#006FF9] text-md font-semibold">30 Year</span>
+      </div>
+    `;
+    container.appendChild(topDiv);
+  }
+
+  // Render cards
+  dataArray.forEach(loan => {
+    const card = document.createElement('div');
+    card.className = 'bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 mb-8';
+
+    card.innerHTML = `
+      <div class="p-6 gap-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-start gap-6">
+          <div class="flex flex-col items-center md:w-1/5 space-y-6 gap-6">
+            <div class="rounded-lg flex flex-col items-center justify-center text-white font-bold text-xl">
+              <img src=${loan.img} alt="" class="w-24 h-24 object-contain">
+              <p class="text-[#000] text-base font-medium text-center mt-1">${loan.text || ''}</p>
+            </div>
+          </div>
+
+          ${
+            // Term Insurance layout
+            targetId !== 'section2'
+              ? `<div class="lg:mr-20 text-sm lg:mb-6 md:mb-12">
+                   <p class="text-gray-500 text-sm mb-1">Premium Starting</p>
+                   <p class="font-semibold text-sm">${loan.premiumRate}</p>
+                 </div>
+
+                 <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 text-sm ml-0 md:ml-auto">
+                   <div>
+                     <p class="text-gray-500 mb-1">Claim Settled</p>
+                     <p class="font-semibold">${loan.loanAmount}</p>
+                   </div>
+                   <div>
+                     <p class="text-gray-500 mb-1">Life Cover</p>
+                     <p class="font-semibold">${loan.interestRate}</p>
+                     <p class="text-sm text-gray-500 mt-1">${loan.interestRate2 || ''}</p>
+                   </div>
+                 </div>` 
+              : `<div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-6 md:gap-0 lg:gap-0 ml-0 md:ml-auto text-sm">
+                   <div class="mb-4 sm:mb-0">
+                     <p class="text-gray-500 mb-1">10 Yr Returns</p>
+                     <p class="text-lg font-semibold">${loan.interestRate}</p>
+                     <p class="text-sm text-gray-500 mt-1">${loan.interestRate2 || ''}</p>
+                   </div>
+                   <div>
+                     <p class="text-gray-500 mb-1">Lump sum Payout#</p>
+                     <p class="text-lg font-semibold">${loan.interestRate_2}</p>
+                     <p class="text-sm text-gray-500 mt-1">${loan.interestRate2_2 || ''}</p>
+                   </div>
+                 </div>`
+          }
+
+          <!-- Apply Button -->
+          <div class="md:w-auto">
+            <button onclick="openModal('${loan.text}')" 
+                    class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-10 sm:py-3 sm:px-7 rounded-lg transition duration-300 block mt-4">
+              Apply
+            </button>
+
+            ${
+              targetId !== 'section2'
+                ? `<p class="text-cyan-600 text-sm mt-2">
+                     Buy online & save <span class="font-semibold">${loan.discountPercent}</span>
+                   </p>`
+                : ''
+            }
+          </div>
+        </div>
+
+        <!-- Extra Details -->
+        <div class="mt-2 md:mt-6 flex justify-between items-start gap-4 ml-8">
+          <div class="flex flex-wrap gap-6">
+            ${
+              loan.paragraphs
+                ? loan.paragraphs
+                    .map(
+                      p => `<div class="flex items-center gap-2">
+                               <svg class="w-4 h-4 text-[#006FF9] flex-shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                                 <path d="M13.485 1.929a1 1 0 0 1 1.414 1.414l-8.25 8.25a1 1 0 0 1-1.414 0l-4.25-4.25a1 1 0 1 1 1.414-1.414L6 9.414l7.485-7.485z"/>
+                               </svg>
+                               <p class="text-gray-600 text-sm">${p}</p>
+                             </div>`
+                    )
+                    .join('')
+                : ''
+            }
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+// Load Term Insurance cards
+renderLoanCards('section1', personalLoan);
+
+// Load Investment Plans cards
+renderLoanCards('section2', investmentPlans);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('applyModal');
+    const closeModal = document.getElementById('closeModal');
+
+    window.openModal = function(planType) {
+        const modalHeading = document.getElementById('modalHeading');
+        modalHeading.textContent = `Applying for ${planType} Plan`;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    });
+});
+
+</script>
+
+   
+    </div>
+
+
+
+ <!-- Modal HTML -->
+<div id="applyModal" class="hidden h-full fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+  <div class="bg-white rounded-xl mt-5 p-10 w-11/12 max-w-xl relative h-auto md:h-[700px] overflow-y-auto">
+    <!-- Close Button -->
+    <button id="closeModal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold">&times;</button>
+    
+    <!-- Dynamic Heading -->
+    <h2 id="modalHeading" class="text-2xl font-bold mb-6 text-center mt-6">Apply for Plan</h2>
+    
+    <!-- Form -->
+    <form onsubmit="handleSubmit(event)" class="space-y-10 mt-10">
+      <!-- Name -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">Full Name <span class="text-red-500">*</span></label>
+        <input type="text" placeholder="Full Name" required
+               class="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">Email ID <span class="text-red-500">*</span></label>
+        <input type="email" placeholder="Email ID" required
+               class="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Mobile -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">Mobile Number <span class="text-red-500">*</span></label>
+        <input type="tel" placeholder="Mobile Number" required pattern="[0-9]{10}"
+               class="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Privacy Policy -->
+      <p class="text-gray-600 text-sm">
+        By submitting this form, you accept the 
+        <a href="#" class="text-[#006FF9] hover:underline">Privacy Policy</a> and 
+        <a href="#" class="text-[#006FF9] hover:underline">Terms & Conditions</a>.
+      </p>
+
+      <!-- Submit Button -->
+      <button type="submit" 
+              class="w-full bg-cyan-500 text-white py-4 rounded-lg hover:bg-[#0056cc] transition font-semibold">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>

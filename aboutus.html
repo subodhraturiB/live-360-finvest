@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>360Finvest ABOUT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .gradient-overlay {
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.95) 0%,
+          rgba(118, 75, 162, 0.95) 100%
+        );
+      }
+    </style>
+  </head>
+  <body >
+
+      <div class="blue-gradient w-full pb-1">
+      <nav class="flex  items-center justify-between container mx-auto pt-5 px-4">
+        <div class="flex items-center gap-4">
+          <img class="w-28 md:w-[10vw]" src="./images/logo.png" alt="360finvest_logo" />
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex gap-8 font-semibold text-white items-center">
+          <a href="/index.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Home</a>
+          
+          <!-- Replace the existing Loans link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Loans 
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 w-48 z-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/personal-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Personal Loan</a>
+                <a href="/home-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home Loan</a>
+                <a href="/bussiness-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Business Loan</a>
+                 <a href="/loan-aginst-property.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Loan Against Property</a>
+                
+              </div>
+            </div>
+          </div>
+           <!-- Replace the existing Insurance link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Insurance
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 z-10 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/life-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Life Insurance</a>
+                <a href="/health-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Health Insurance</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/emi-Calculater.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">EMI Calculater </a>
+          <a href="/aboutus.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">About Us </a>
+          <a href="/blog.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Blogs </a>
+          <a href="/contact.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Contact </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <button class="flex text-black px-6 gap-2 py-3 rounded-full font-semibold bg-white">
+            Apply Now
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobileMenuButton" class="md:hidden text-white p-2 rounded-md focus:outline-none" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="fixed inset-y-0 right-0 z-50 w-3/4 max-w-xs bg-blue-800/95 text-white transform translate-x-full transition-transform duration-300 md:hidden">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+              <img class="w-28" src="./images/logo.png" alt="logo" />
+              <button id="mobileMenuClose" class="p-2 focus:outline-none" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Replace the existing mobile menu nav section with this: -->
+            <nav class="flex flex-col gap-4">
+              <a href="/index.html" class="block py-2 px-1 text-white font-medium">Home</a>
+              
+              <!-- Loans Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Loans
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/personal-loan.html" class="block py-2 text-gray-300 hover:text-white">Personal Loan</a>
+                  <a href="/home-loan.html" class="block py-2 text-gray-300 hover:text-white">Home Loan</a>
+                  <a href="/bussiness-loans.html" class="block py-2 text-gray-300 hover:text-white">Business Loan</a>
+                  <a href="/loan-aginst-property.html" class="block py-2 text-gray-300 hover:text-white">Loan Against Property</a>
+                </div>
+              </div>
+
+              <!-- Insurance Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Insurance
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/life-insurance.html" class="block py-2 text-gray-300 hover:text-white">Life Insurance</a>
+                  <a href="/health-insurance.html" class="block py-2 text-gray-300 hover:text-white">Health Insurance</a>
+                </div>
+              </div>
+
+              <a href="/emi-Calculater.html" class="block py-2 px-1 text-white font-medium">EMI Calculator</a>
+              <a href="/aboutus.html" class="block py-2 px-1 text-white font-medium">About Us</a>
+              <a href="/blog.html" class="block py-2 px-1 text-white font-medium">Blogs</a>
+              <a href="/contact.html" class="block py-2 px-1 text-white font-medium">Contact</a>
+
+              <div class="mt-4">
+                <button class="w-full bg-white text-blue-800 py-2 rounded-full font-semibold">Apply Now</button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+      <!-- Banner Section -->
+  <section class="relative h-[350px]  blue-gradient overflow-hidden flex items-center justify-center
+                lg:rounded-b-[100px] md-rounded-b-none">
+
+
+
+    <!-- Left Pattern -->
+    <img src="./images/h1_bg-left.png" alt="Left Pattern"
+         class="absolute -left-40 top-[60%] -translate-y-1/2 h-[150%] lg:w-[700px] md:w-[400px] max-[640px]:w-[300px] object-contain">
+
+    <!-- Right Pattern -->
+    <img src="./images/h1_bg-right.png" alt="Right Pattern"
+         class="absolute -right-40 top-[60%] -translate-y-1/2 h-[150%] lg:w-[700px] 
+         md:w-[400px] max-[640px]:w-[300px] object-contain">
+
+    <!-- Content -->
+    <div class="relative z-10 px-4 text-center">
+      <h1 class="lg:text-[64px] md:text-[50px] max-[640px]:text-[32px] text-white font-bricolage font-bold mb-3">About Us</h1>
+      <nav class="flex justify-center items-center space-x-2 text-[16px] font-dmsans">
+        <a href="#" class="text-breadcrumbGray text-white hover:text-cyan-600 transition">Home</a>
+        <span class="inline-flex items-center justify-center text-cyan-500">•</span>
+        <span class="text-[16px] text-cyan-500">About us</span>
+      </nav>
+    </div>
+
+  </section>
+
+
+    <!-- Business Finance Section 1 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-5 gap-12 items-center">
+          <!-- Text Column -->
+          <div class="md:col-span-2">
+            <span
+              class="bg-gradient-to-r from-cyan-600 to-cyan-300 text-white text-sm font-bold px-4 py-1 rounded-full inline-flex items-center gap-2"
+            >
+              <i class="bi bi-stars text-2xl"></i>
+              FINANCIAL GOALS
+            </span>
+            <h2 class="mt-6 text-3xl md:text-4xl font-bold text-gray-900">
+              The importance of business finance
+            </h2>
+            <div class="mt-8 space-y-6">
+              <div class="flex items-start">
+                <span class="text-cyan-500 text-xl mr-3"
+                  ><i class="bi bi-check-circle-fill"></i
+                ></span>
+                <div>
+                  <h3 class="font-semibold text-gray-900">
+                    Strategic Investment
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    We are the fastest-growing platform for startups and
+                    investors who fund them
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-cyan-500 text-xl mr-3"
+                  ><i class="bi bi-check-circle-fill"></i
+                ></span>
+                <div>
+                  <h3 class="font-semibold text-gray-900">
+                    Transparent Process
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    Creating transparency is our key to success in this crowded
+                    investment world
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-cyan-500 text-xl mr-3"
+                  ><i class="bi bi-check-circle-fill"></i
+                ></span>
+                <div>
+                  <h3 class="font-semibold text-gray-900">Fast Investment</h3>
+                  <p class="text-gray-600 mt-1">
+                    We are making investment easier, efficient, and easily
+                    accessible for everyone
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Column -->
+          <div class="md:col-span-3 relative inline-block">
+
+
+            <!-- Image -->
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+              alt="Business meeting"
+              class="rounded-lg rounded-bl-[60px] shadow-lg w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+<section class="py-20 gradient-bg text-white relative overflow-hidden">
+  <div class="absolute inset-0 gradient-overlay"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      
+      <!-- Video Button Container - Now properly centered -->
+      <div class="flex justify-center items-center mb-8">
+        <div class="relative flex justify-center items-center w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 group">
+
+            <!-- Rotating Text -->
+              <div class="absolute w-full h-full animate-[spin_20s_linear_infinite] group-hover:[animation-play-state:paused]">
+             <svg viewBox="0 0 300 300" class="w-full h-full">
+            <defs>
+                 <path id="circlePath" d="M 150,150 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"/>
+               </defs>
+               <text class="fill-white font-semibold uppercase tracking-[0.35em] text-[0.8rem] sm:text-[0.9rem]">
+               <textPath href="#circlePath" startOffset="0%" textLength="753" lengthAdjust="spacing">
+               EXPLORE OUR VIDEO • EXPLORE OUR VIDEO • 
+               </textPath>
+              </text>
+            </svg>
+           </div>
+
+          <!-- Play Button -->
+          <div class="relative flex justify-center items-center bg-white rounded-full shadow-xl w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 cursor-pointer transition-transform duration-300 hover:scale-105">
+            <!-- Triangle (Play Icon) -->
+            <div class="w-0 h-0 border-l-[18px] border-l-[#2d3561] border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        360 Finvest is stimulating<br/>vitality, supporting growth
+      </h2>
+    </div>
+    <hr class="border-blue-300 opacity-50" />
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+      <div class="text-center">
+        <p class="text-5xl font-bold">32K</p>
+        <p class="mt-2 text-blue-100">Users</p>
+      </div>
+      <div class="text-center">
+        <p class="text-5xl font-bold">40%</p>
+        <p class="mt-2 text-blue-100">Growth</p>
+      </div>
+      <div class="text-center">
+        <p class="text-5xl font-bold">102B</p>
+        <p class="mt-2 text-blue-100">Revenue</p>
+      </div>
+      <div class="text-center">
+        <p class="text-5xl font-bold">36%</p>
+        <p class="mt-2 text-blue-100">Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+    
+     <!-- Personal Finance Section 2 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-5 gap-12 items-center">
+          
+
+          <!-- Image Column -->
+          <div class="md:col-span-3 relative inline-block">
+            <!-- Floating Card -->
+            <div
+              class="absolute right-5 top-1/4 translate-x-1/4 -translate-y-1/2 bg-gradient-to-r from-cyan-500 to-cyan-400 text-white px-6 py-5 rounded-2xl shadow-lg flex items-center gap-4"
+            >
+              <div class="text-2xl">
+                <!-- SVG Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_795_601)">
+                    <path
+                      d="M27.4193 22.3227C28.3326 22.3227 29.0729 21.5823 29.0729 20.669C29.0729 19.7557 28.3326 19.0154 27.4193 19.0154C26.506 19.0154 25.7656 19.7557 25.7656 20.669C25.7656 21.5823 26.506 22.3227 27.4193 22.3227Z"
+                      fill="#6B8DF2"
+                    ></path>
+                    <path
+                      d="M11.1945 30.0276L0.128689 41.0925C-0.390217 41.6113 0.706845 43.5495 2.57894 45.4214C4.45113 47.2934 6.38941 48.3903 6.90831 47.8715L10.0118 44.768L11.1945 30.0276Z"
+                      fill="#F2A7D0"
+                    ></path>
+                    <path
+                      d="M14.1675 36.8064L4.16016 46.8129C5.43956 47.7868 6.53644 48.2422 6.9075 47.8712L10.011 44.7677L14.1675 36.8064Z"
+                      fill="#F294C7"
+                    ></path>
+                    <path
+                      d="M14.9738 26.2485L3.2322 37.9889C2.7133 38.5078 3.81036 40.4459 5.68245 42.3178C7.55464 44.1898 9.49292 45.2867 10.0118 44.7679L11.4938 43.2861L12.4285 41.4352L13.9484 40.8318L21.7535 33.0275L14.9738 26.2485Z"
+                      fill="#FFCA21"
+                    ></path>
+                    <path
+                      d="M19.8497 31.1248L7.26367 43.7097C8.54308 44.6835 9.63995 45.139 10.011 44.768L11.493 43.2862L12.2094 41.4193L13.9476 40.8318L21.7527 33.0275L19.8497 31.1248Z"
+                      fill="#F2BB0C"
+                    ></path>
+                    <path
+                      d="M21.6708 33.1041C22.1896 32.5853 21.0927 30.6474 19.221 28.7756C17.3492 26.9038 15.4112 25.807 14.8925 26.3258C14.3737 26.8446 15.4705 28.7825 17.3423 30.6543C19.2141 32.5261 21.152 33.6229 21.6708 33.1041Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M24.1733 31.4062C23.9179 31.4062 23.6709 31.2687 23.5426 31.0274C23.3577 30.6795 23.4897 30.2474 23.8377 30.0623C26.8935 28.4374 33.2295 26.1505 41.3291 29.0913C41.6995 29.2258 41.8907 29.6351 41.7563 30.0055C41.6218 30.3759 41.2125 30.5672 40.842 30.4327C33.2616 27.6803 27.3544 29.8087 24.5078 31.3224C24.4009 31.3792 24.2863 31.4062 24.1733 31.4062Z"
+                      fill="#B5C8FF"
+                    ></path>
+                    <path
+                      d="M22.7761 25.9373C22.5935 25.9373 22.4109 25.8676 22.2715 25.7282C21.9928 25.4495 21.9928 24.9977 22.2716 24.7191L23.611 23.3799C23.8895 23.1012 24.3414 23.1013 24.6201 23.38C24.8987 23.6587 24.8987 24.1105 24.62 24.3891L23.2806 25.7283C23.1413 25.8676 22.9586 25.9373 22.7761 25.9373Z"
+                      fill="#B5C8FF"
+                    ></path>
+                    <path
+                      d="M30.2859 18.428C30.1032 18.428 29.9204 18.3582 29.781 18.2188C29.5025 17.94 29.5027 17.4882 29.7815 17.2096L39.6845 7.31474C39.9632 7.03621 40.4151 7.03639 40.6936 7.31511C40.9722 7.59393 40.972 8.04571 40.6932 8.32433L30.7902 18.2192C30.6509 18.3584 30.4683 18.428 30.2859 18.428Z"
+                      fill="#B5C8FF"
+                    ></path>
+                    <path
+                      d="M35.9505 4.87714C36.8638 4.87714 37.6042 4.13677 37.6042 3.22348C37.6042 2.31019 36.8638 1.56982 35.9505 1.56982C35.0372 1.56982 34.2969 2.31019 34.2969 3.22348C34.2969 4.13677 35.0372 4.87714 35.9505 4.87714Z"
+                      fill="#6B8DF2"
+                    ></path>
+                    <path
+                      d="M44.681 13.6801C45.5943 13.6801 46.3347 12.9397 46.3347 12.0265C46.3347 11.1132 45.5943 10.3728 44.681 10.3728C43.7677 10.3728 43.0273 11.1132 43.0273 12.0265C43.0273 12.9397 43.7677 13.6801 44.681 13.6801Z"
+                      fill="#6B8DF2"
+                    ></path>
+                    <path
+                      d="M29.6888 36.5644C30.6021 36.5644 31.3425 35.824 31.3425 34.9107C31.3425 33.9974 30.6021 33.2571 29.6888 33.2571C28.7755 33.2571 28.0352 33.9974 28.0352 34.9107C28.0352 35.824 28.7755 36.5644 29.6888 36.5644Z"
+                      fill="#6B8DF2"
+                    ></path>
+                    <path
+                      d="M44.4706 23.8068L42.725 22.8539L40.949 23.7487L41.3177 21.7974L39.916 20.388L41.8895 20.135L42.7993 18.3691L43.6503 20.1641L45.6142 20.482L44.1667 21.8444L44.4706 23.8068Z"
+                      fill="#FFCA21"
+                    ></path>
+                    <path
+                      d="M44.1269 6.35165L43.5664 4.44356L41.6777 3.8204L43.3183 2.70131L43.3237 0.713623L44.898 1.93012L46.7901 1.32487L46.1226 3.19575L47.2864 4.80928L45.2996 4.74909L44.1269 6.35165Z"
+                      fill="#FFCA21"
+                    ></path>
+                    <path
+                      d="M36.33 44.1601L34.5844 43.2071L32.8083 44.1021L33.177 42.1507L31.7754 40.7413L33.7487 40.4883L34.6587 38.7224L35.5095 40.5173L37.4735 40.8353L36.026 42.1977L36.33 44.1601Z"
+                      fill="#FFCA21"
+                    ></path>
+                    <path
+                      d="M38.994 16.3937C39.9123 16.3937 39.9138 14.9666 38.994 14.9666C38.0757 14.9666 38.0742 16.3937 38.994 16.3937Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M47.3104 27.3649C48.2286 27.3649 48.2302 25.9377 47.3104 25.9377C46.3921 25.9377 46.3906 27.3649 47.3104 27.3649Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M21.3592 1.42716C22.2775 1.42716 22.279 0 21.3592 0C20.4409 0 20.4394 1.42716 21.3592 1.42716Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M44.6464 31.7441C45.5647 31.7441 45.5662 30.3169 44.6464 30.3169C43.728 30.3169 43.7265 31.7441 44.6464 31.7441Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M17.3479 24.387C17.2365 24.387 17.1236 24.3609 17.0179 24.3057C16.6687 24.1232 16.5335 23.692 16.7161 23.3427C18.1937 20.5158 20.2653 14.6562 17.538 7.17451C17.4031 6.80429 17.5939 6.39469 17.9641 6.25969C18.3343 6.1246 18.7439 6.31557 18.8789 6.6857C21.7938 14.6822 19.5674 20.9684 17.9808 24.0038C17.8534 24.2476 17.605 24.387 17.3479 24.387Z"
+                      fill="#B5C8FF"
+                    ></path>
+                    <path
+                      d="M13.0494 19.9562C13.9645 19.9562 14.7063 19.2172 14.7063 18.3056C14.7063 17.394 13.9645 16.655 13.0494 16.655C12.1344 16.655 11.3926 17.394 11.3926 18.3056C11.3926 19.2172 12.1344 19.9562 13.0494 19.9562Z"
+                      fill="#6B8DF2"
+                    ></path>
+                    <path
+                      d="M42.2385 35.569C42.0071 35.5095 41.9379 35.4076 41.754 35.0944C41.5379 34.7267 41.2114 34.1708 40.3945 33.9606C39.578 33.7504 39.0234 34.0793 38.6563 34.2968C38.3432 34.4824 38.2331 34.5382 38.0012 34.4787C37.7697 34.4192 37.7005 34.3173 37.5167 34.0042C37.3007 33.6364 36.9741 33.0806 36.1573 32.8704C35.7752 32.772 35.3866 33.002 35.2883 33.3836C35.1901 33.7653 35.4199 34.1543 35.8016 34.2525C36.0331 34.312 36.1023 34.4139 36.2861 34.727C36.5021 35.0948 36.8286 35.6506 37.6455 35.8608C38.4621 36.0709 39.0169 35.7422 39.3839 35.5246C39.6969 35.339 39.807 35.283 40.0388 35.3428C40.2703 35.4023 40.3395 35.5042 40.5234 35.8174C40.7395 36.1851 41.066 36.7409 41.8829 36.9511C41.9425 36.9664 42.0024 36.9738 42.0612 36.9738C42.3791 36.9738 42.669 36.7598 42.7519 36.4378C42.8499 36.0562 42.6201 35.6672 42.2385 35.569Z"
+                      fill="#F2A7D0"
+                    ></path>
+                    <path
+                      d="M36.931 23.4372C37.2769 23.2482 37.4039 22.8146 37.2149 22.4688C37.0257 22.1229 36.5921 21.9958 36.2465 22.185C36.0366 22.2997 35.9161 22.2727 35.5667 22.1697C35.1572 22.0492 34.5385 21.8668 33.799 22.2712C33.0589 22.6758 32.8794 23.295 32.7608 23.7046C32.6599 24.0531 32.618 24.1687 32.4086 24.2831C32.1987 24.3979 32.0783 24.3708 31.7289 24.2677C31.3195 24.1472 30.701 23.9648 29.9613 24.3692C29.6154 24.5582 29.4884 24.9918 29.6774 25.3376C29.8666 25.6835 30.3002 25.8105 30.6458 25.6214C30.8559 25.5067 30.9763 25.5338 31.3255 25.6368C31.5454 25.7016 31.8254 25.7841 32.1522 25.7841C32.434 25.7841 32.7508 25.7226 33.0933 25.5353C33.8335 25.1306 34.013 24.5115 34.1317 24.1018C34.2325 23.7534 34.2744 23.6377 34.4837 23.5234C34.6934 23.4087 34.814 23.4357 35.1635 23.5387C35.5728 23.6592 36.1915 23.8416 36.931 23.4372Z"
+                      fill="#F2A7D0"
+                    ></path>
+                    <path
+                      d="M13.9566 10.4904C13.6429 10.3069 13.5409 10.2379 13.4815 10.0076C13.4221 9.77784 13.4779 9.66825 13.6633 9.35662C13.8816 8.98978 14.2114 8.43543 14.0006 7.61897C13.7897 6.80287 13.2328 6.477 12.8643 6.26128C12.5506 6.07772 12.4485 6.00862 12.3891 5.77847C12.2905 5.397 11.9019 5.1674 11.5197 5.26603C11.1381 5.36465 10.9087 5.7539 11.0072 6.13547C11.2181 6.95156 11.7749 7.27743 12.1435 7.49306C12.4572 7.67662 12.5592 7.74562 12.6187 7.97587C12.678 8.20565 12.6222 8.31525 12.4368 8.62687C12.2186 8.99372 11.8887 9.54806 12.0996 10.3645C12.3104 11.1806 12.8673 11.5065 13.2358 11.7221C13.5496 11.9057 13.6516 11.9748 13.7111 12.2049C13.7942 12.5267 14.0839 12.7402 14.4015 12.7402C14.4606 12.7402 14.5207 12.7327 14.5805 12.7173C14.9621 12.6187 15.1915 12.2294 15.0929 11.8478C14.882 11.0319 14.3252 10.7061 13.9566 10.4904Z"
+                      fill="#F2A7D0"
+                    ></path>
+                    <path
+                      d="M25.7983 11.7624C25.9879 11.4169 25.8615 10.9831 25.5161 10.7935C25.1706 10.6038 24.7369 10.7303 24.5471 11.0757C24.1414 11.8151 24.3243 12.4335 24.4453 12.8427C24.5481 13.1903 24.5753 13.3101 24.4609 13.5183C24.3463 13.7271 24.2303 13.769 23.8807 13.87C23.4703 13.9884 22.8505 14.1672 22.4449 14.9061C22.0391 15.6455 22.2221 16.2639 22.3431 16.6731C22.4458 17.0206 22.473 17.1404 22.3587 17.3486C22.1691 17.6941 22.2954 18.1279 22.6409 18.3175C22.7499 18.3774 22.8675 18.4058 22.9836 18.4058C23.2357 18.4058 23.4799 18.2719 23.6097 18.0355C24.0157 17.296 23.8328 16.6776 23.7116 16.2684C23.6089 15.9208 23.5818 15.801 23.6961 15.5928C23.8106 15.384 23.9267 15.3421 24.2763 15.2411C24.6866 15.1227 25.3065 14.9439 25.712 14.205C26.1179 13.4655 25.935 12.8471 25.8139 12.4379C25.7111 12.0904 25.6841 11.9706 25.7983 11.7624Z"
+                      fill="#F2A7D0"
+                    ></path>
+                    <path
+                      d="M24.1758 3.55171L25.1306 5.29387L24.234 7.06649L26.1891 6.69853L27.6012 8.09737L27.8547 6.12787L29.6242 5.21981L27.8257 4.37053L27.5071 2.4104L26.142 3.85509L24.1758 3.55171Z"
+                      fill="#FFCA21"
+                    ></path>
+                    <path
+                      d="M3.7832 11.6773L4.73795 13.4194L3.84133 15.192L5.79648 14.8241L7.20864 16.223L7.46214 14.2534L9.23148 13.3453L7.43308 12.496L7.11452 10.5359L5.74942 11.9806L3.7832 11.6773Z"
+                      fill="#FFCA21"
+                    ></path>
+                    <path
+                      d="M32.3436 9.75235C33.2619 9.75235 33.2634 8.3252 32.3436 8.3252C31.4253 8.3252 31.4238 9.75235 32.3436 9.75235Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M16.8709 4.02164C17.7892 4.02164 17.7907 2.59448 16.8709 2.59448C15.9527 2.59448 15.9511 4.02164 16.8709 4.02164Z"
+                      fill="#EB67A5"
+                    ></path>
+                    <path
+                      d="M12.2245 34.5432L12.6733 32.4852L14.6232 31.6881L12.8045 30.6254L12.652 28.5669L9.88489 31.3372L9.87664 31.3534L8.76758 33.1443L10.8638 32.9352L12.2245 34.5432Z"
+                      fill="white"
+                    ></path>
+                    <path
+                      d="M8.76758 41.613L10.8485 41.9395L11.4942 43.2862L13.9488 40.8318L13.309 40.1938L13.6885 38.1218L11.8131 39.0808L9.95998 38.0796L10.2925 40.1597L8.76758 41.613Z"
+                      fill="white"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_795_601">
+                      <rect width="48" height="48" fill="white"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <p class="text-lg font-semibold mb-2">
+                  Successful<br />
+                  transfer
+                </p>
+                <span
+                  class="bg-yellow-500 text-black text-sm px-3 py-1 rounded-full"
+                  >$69.95</span
+                >
+              </div>
+            </div>
+
+            <!-- Image -->
+            <img
+              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop"
+              alt="Personal finance"
+              class="rounded-lg rounded-tr-[60px] rounded-bl-[60px] shadow-lg w-full h-auto" />
+          </div>
+
+          <!-- Text Column -->
+          <div class="md:col-span-2">
+            <span
+            class="bg-gradient-to-r from-cyan-600 to-cyan-300 text-white text-sm font-bold px-4 py-1 rounded-full inline-flex items-center gap-2"
+            >
+              <i class="bi bi-bar-chart-line-fill text-2xl"></i>
+              OUR MISSION
+            </span>
+            <h2 class="mt-6 text-3xl md:text-4xl font-bold text-gray-900">
+              Convenient & easy personal finances
+            </h2>
+            <div class="mt-8 space-y-6">
+              <div class="flex items-start">
+                <span class="text-cyan-500 text-xl mr-3"
+                  ><i class="bi bi-graph-down-arrow"></i></span>
+                <div>
+                  <h3 class="font-semibold text-gray-900">
+                    Low rates
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    
+Get loans and credit at industry-leading low rates that save you money
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-cyan-500 text-xl mr-3"
+                  ><i class="bi bi-coin"></i></span>
+                <div>
+                  <h3 class="font-semibold text-gray-900">
+                    No fees required
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    
+No hidden charges, no surprise fees. What you see is what you get
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-cyan-500 text-xl mr-3"
+                  ><i class="bi bi-phone-flip"></i></span>
+                <div>
+                  <h3 class="font-semibold text-gray-900">Simple. Way. Lending</h3>
+                  <p class="text-gray-600 mt-1">
+                    
+Apply in minutes, get approved in hours, and receive funds in days
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision, Mission & Values Section -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Our Vision, Mission & Values
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+          Driving financial innovation and empowering communities through transparency, expertise, and trust.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Vision Card -->
+        <div class="bg-gradient-to-br from-cyan-50 to-cyan-50 rounded-3xl p-8 card-hover text-center">
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Vision</h3>
+          <p class="text-gray-600 leading-relaxed">
+            To be the leading financial services provider, revolutionizing how people manage their finances with cutting-edge technology and personalized solutions.
+          </p>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="bg-gradient-to-br from-cyan-50 to-cyan-50 rounded-3xl p-8 card-hover text-center">
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Mission</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Deliver exceptional financial products and services that empower individuals and businesses to achieve their goals with confidence and security.
+          </p>
+        </div>
+
+        <!-- Values Card -->
+        <div class="bg-gradient-to-br from-cyan-50 to-cyan-50 rounded-3xl p-8 card-hover text-center">
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Values</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Integrity, innovation, customer-centricity, and excellence guide everything we do, building lasting relationships based on trust and transparency.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Section -->
+    <section
+      class="py-16 bg-gradient-to-r from-cyan-50 via-purple-50 to-pink-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span
+              class="bg-gradient-to-r from-cyan-600 to-cyan-300 text-white text-sm font-bold px-4 py-1 rounded-full inline-flex items-center gap-2" >
+              <i class="bi bi-bookmark-star text-2xl"></i>
+              WHY CHOOSE US
+            </span>
+          <h2 class="mt-6 text-3xl md:text-4xl font-bold text-gray-900">
+            Learn why 360 FINVEST is the<br />right choice for you
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <span class="text-3xl">💰</span>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900">
+              Low interest rate
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Get competitive rates that help you save more on your loans
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <span class="text-3xl">🎯</span>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900">
+              Flexible payment
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Choose payment plans that work with your budget and lifestyle
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <span class="text-3xl">📊</span>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900">
+              Wide loan range
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Access loans from $1,000 to $100,000 for any purpose
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <span class="text-3xl">⚡</span>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900">
+              Quick approval
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Get instant decisions and fast funding when you need it most
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <span class="text-3xl">🛡️</span>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900">
+              Safety & privacy
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Bank-level security keeps your information safe and private
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <span class="text-3xl">🎁</span>
+            <h3 class="mt-4 text-xl font-semibold text-gray-900">Big bonus</h3>
+            <p class="mt-2 text-gray-600">
+              Earn rewards and cashback on your financial activities
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Leadership Team Section -->
+    <div class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <span
+              class="bg-gradient-to-r from-cyan-600 to-cyan-300 text-white text-sm font-bold px-4 py-1 rounded-full inline-flex items-center gap-2"
+            >
+              <i class="bi bi-bookmark-heart text-2xl"></i>
+              LEADERSHIP TEAM
+            </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Meet Our Leadership Team
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Experienced professionals dedicated to driving innovation and delivering exceptional financial solutions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <img src="./images/team_member1.png" alt="Team Member 1" class="w-full h-64 object-cover">
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">John Smith</h3>
+              <p class="text-cyan-500 font-medium mb-4">CEO & Founder</p>
+              <p class="text-gray-600 text-sm">Over 15 years of experience in financial services, leading the company towards innovative solutions.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <img src="./images/team_member2.png" alt="Team Member 2" class="w-full h-64 object-cover">
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Sarah Johnson</h3>
+              <p class="text-cyan-500 font-medium mb-4">Chief Financial Officer</p>
+              <p class="text-gray-600 text-sm">Expert in financial strategy and risk management, ensuring sustainable growth.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <img src="./images/team_member3.png" alt="Team Member 3" class="w-full h-64 object-cover">
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Michael Chen</h3>
+              <p class="text-cyan-500 font-medium mb-4">Head of Technology</p>
+              <p class="text-gray-600 text-sm">Driving technological innovation to enhance user experience and operational efficiency.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <img src="./images/team_member4.png" alt="Team Member 4" class="w-full h-64 object-cover">
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Emily Davis</h3>
+              <p class="text-cyan-500 font-medium mb-4">Customer Success Manager</p>
+              <p class="text-gray-600 text-sm">Dedicated to ensuring customer satisfaction and building long-term relationships.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 5 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <img src="./images/team_member5.png" alt="Team Member 5" class="w-full h-64 object-cover">
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">David Wilson</h3>
+              <p class="text-cyan-500 font-medium mb-4">Marketing Director</p>
+              <p class="text-gray-600 text-sm">Leading marketing strategies to expand our reach and brand presence.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 6 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <img src="./images/team_member6.png" alt="Team Member 6" class="w-full h-64 object-cover">
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Lisa Brown</h3>
+              <p class="text-cyan-500 font-medium mb-4">Operations Manager</p>
+              <p class="text-gray-600 text-sm">Ensuring smooth operations and continuous improvement across all departments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Company Journey Timeline -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Our Journey
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+          From humble beginnings to becoming a trusted financial partner, here's our story of growth and innovation.
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-cyan-500 h-full hidden md:block"></div>
+
+        <div class="space-y-12">
+          <!-- Timeline Item 1 -->
+          <div class="flex flex-col md:flex-row items-center md:items-center">
+            <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+              <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2010 - Foundation</h3>
+                <p class="text-gray-600">360 Finvest was founded with a vision to democratize financial services through technology.</p>
+              </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full border-4 border-white shadow-lg mx-auto md:mx-0 my-4 md:my-0"></div>
+            <div class="md:w-1/2 md:pl-8"></div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="flex flex-col md:flex-row items-center md:items-center">
+            <div class="md:w-1/2 md:pr-8"></div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full border-4 border-white shadow-lg mx-auto md:mx-0 my-4 md:my-0"></div>
+            <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+              <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2015 - Digital Transformation</h3>
+                <p class="text-gray-600">Launched our first digital platform, revolutionizing how customers access financial services.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="flex flex-col md:flex-row items-center md:items-center">
+            <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+              <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2020 - Expansion</h3>
+                <p class="text-gray-600">Expanded services to include comprehensive insurance and investment solutions.</p>
+              </div>
+            </div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full border-4 border-white shadow-lg mx-auto md:mx-0 my-4 md:my-0"></div>
+            <div class="md:w-1/2 md:pl-8"></div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="flex flex-col md:flex-row items-center md:items-center">
+            <div class="md:w-1/2 md:pr-8"></div>
+            <div class="w-4 h-4 bg-cyan-500 rounded-full border-4 border-white shadow-lg mx-auto md:mx-0 my-4 md:my-0"></div>
+            <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+              <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2024 - Future Forward</h3>
+                <p class="text-gray-600">Continuing to innovate with AI-driven financial tools and enhanced customer experiences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+
+
+            <!-- Header Features -->
+    <header class="footer-header">
+    <div class="container  mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="./images/logo.png" alt="360 Finvest Logo" class="h-12">
+            </div>
+            
+            <!-- Features -->
+            <div class="hidden md:flex flex-wrap items-center gap-8">
+                <div class="flex items-center  space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">24/7 Support</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Weekly updates</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Secure and compliant</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">99.9% Uptime</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Footer -->
+    <footer class="fp-main-footer bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <!-- Product Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Loans</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/home-loan.html" class="fp-footer-link text-gray-600 block">Hoam Loan</a></li>
+                        <li><a href="/personal-loan.html" class="fp-footer-link text-gray-600 block">Personal Loan</a></li>
+                        <li><a href="/bussiness-loans.html" class="fp-footer-link text-gray-600 block">Bussiness Loan</a></li>
+                        <li><a href="/loan-aginst-property.html" class="fp-footer-link text-gray-600 block">Loan Against Property</a></li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+
+
+                   <!-- Resources Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Insurance</h3>
+                    <ul class="space-y-4">
+                          <li><a href="/health-insurance.html" class="fp-footer-link text-gray-600 block">Health Insurance</a></li>
+                          <li><a href="/life-insurance.html" class="fp-footer-link text-gray-600 block">Life Insurance</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/index.html" class="fp-footer-link text-gray-600 block">Home</a></li>
+                        <li><a href="/aboutus.html" class="fp-footer-link text-gray-600 block">About Us</a></li>
+                        <li><a href="/blog.html" class="fp-footer-link text-gray-600 block">Blog</a></li>
+                        <li><a href="/contact.html" class="fp-footer-link text-gray-600 block">Contact</a></li>
+                        
+                    </ul>
+                </div>
+
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Demat and Investment Tools</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/open-demat-account.html" class="fp-footer-link text-gray-600 block">Open Demat Account</a></li>
+                        <li><a href="/emi-Calculater.html" class="fp-footer-link text-gray-600 block">EMI Calculater</a></li>
+                        <li><a href="/equity.html" class="fp-footer-link text-gray-600 block">Equity</a></li>
+                        
+                        
+                    </ul>
+                </div>
+
+             
+
+             
+                <!-- Contact Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">CONTACT</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:+18341234567899" class="fp-footer-link text-gray-600  block">+91 7982894555</a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@example.com" class="fp-footer-link text-gray-600 block">info@360finvest.com</a>
+                        </li>
+                        <li class="text-gray-600 leading-relaxed">
+                           Imperia Bandhan, B-Block Office No-311, Plot no. 44-45, Sector Knowledge Park 5, Greater Noida West
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="fp-divider h-px"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm">
+                    Copyright © 2024 <span class="font-semibold text-grey-400"> 360 Finvest </span> All rights reserved
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex items-center space-x-6  text-sm">
+                    <a href="/privacy-policy.html" class="text-gray-500 hover:text-cyan-500 transition-colors">Privacy Policy</a>
+                   
+                    <a href="/terms-conditions.html" class="text-gray-500 hover:text-cyan-500 transition-colors">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+  </body>
+</html>

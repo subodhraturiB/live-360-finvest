@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator - 360Finvest</title>
+    <meta name="description" content="Calculate your monthly EMI instantly with 360Finvest's interactive EMI calculator. Quick, accurate, and easy to use.">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: white;
+           
+        }
+        
+        .gradient-cyan {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        }
+        
+        .input-field {
+            transition: all 0.3s ease;
+            border: 2px solid #e0f2fe;
+        }
+        
+        .input-field:focus {
+            border-color: #06b6d4;
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+        }
+        
+        .cta-button:active {
+            transform: translateY(0);
+        }
+        
+        .slider {
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #06b6d4, #0891b2);
+            outline: none;
+            cursor: pointer;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4);
+            border: 3px solid #06b6d4;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4);
+            border: 3px solid #06b6d4;
+        }
+        
+        .stat-item {
+            background: rgba(6, 182, 212, 0.05);
+            border-left: 4px solid #06b6d4;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            background: rgba(6, 182, 212, 0.1);
+            transform: translateX(2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+  <div class="blue-gradient  w-full pb-1">
+      <nav class="flex  items-center justify-between container mx-auto pt-5 px-4">
+        <div class="flex items-center gap-4">
+          <img class="w-28 md:w-[10vw]" src="./images/logo.png" alt="360finvest_logo" />
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex gap-8 font-semibold text-white items-center">
+          <a href="/index.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Home</a>
+          
+          <!-- Replace the existing Loans link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Loans 
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 w-48 z-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/personal-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Personal Loan</a>
+                <a href="/home-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home Loan</a>
+                <a href="/bussiness-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Business Loan</a>
+                 <a href="/loan-aginst-property.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Loan Against Property</a>
+                
+              </div>
+            </div>
+          </div>
+           <!-- Replace the existing Insurance link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Insurance
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 z-10 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/life-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Life Insurance</a>
+                <a href="/health-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Health Insurance</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/emi-Calculater.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">EMI Calculater </a>
+          <a href="/aboutus.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">About Us </a>
+          <a href="/blog.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Blogs </a>
+          <a href="/contact.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Contact </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <button class="flex text-black px-6 gap-2 py-3 rounded-full font-semibold bg-white">
+            Apply Now
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobileMenuButton" class="md:hidden text-white p-2 rounded-md focus:outline-none" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="fixed inset-y-0 right-0 z-50 w-3/4 max-w-xs bg-blue-800/95 text-white transform translate-x-full transition-transform duration-300 md:hidden">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+              <img class="w-28" src="./images/logo.png" alt="logo" />
+              <button id="mobileMenuClose" class="p-2 focus:outline-none" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Replace the existing mobile menu nav section with this: -->
+            <nav class="flex flex-col gap-4">
+              <a href="/index.html" class="block py-2 px-1 text-white font-medium">Home</a>
+              
+              <!-- Loans Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Loans
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/personal-loan.html" class="block py-2 text-gray-300 hover:text-white">Personal Loan</a>
+                  <a href="/home-loan.html" class="block py-2 text-gray-300 hover:text-white">Home Loan</a>
+                  <a href="/bussiness-loans.html" class="block py-2 text-gray-300 hover:text-white">Business Loan</a>
+                  <a href="/loan-aginst-property.html" class="block py-2 text-gray-300 hover:text-white">Loan Against Property</a>
+                </div>
+              </div>
+
+              <!-- Insurance Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Insurance
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/life-insurance.html" class="block py-2 text-gray-300 hover:text-white">Life Insurance</a>
+                  <a href="/health-insurance.html" class="block py-2 text-gray-300 hover:text-white">Health Insurance</a>
+                </div>
+              </div>
+
+              <a href="/emi-Calculater.html" class="block py-2 px-1 text-white font-medium">EMI Calculator</a>
+              <a href="/aboutus.html" class="block py-2 px-1 text-white font-medium">About Us</a>
+              <a href="/blog.html" class="block py-2 px-1 text-white font-medium">Blogs</a>
+              <a href="/contact.html" class="block py-2 px-1 text-white font-medium">Contact</a>
+
+              <div class="mt-4">
+                <button class="w-full bg-white text-blue-800 py-2 rounded-full font-semibold">Apply Now</button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main Container -->
+    <main class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Hero Section -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-bold text-cyan-900 mb-4">EMI Calculator</h2>
+                <p class="text-lg text-gray-700 mb-2">Calculate your monthly EMI in seconds</p>
+                <p class="text-sm text-gray-600">Get instant insights on your loan repayment schedule</p>
+            </div>
+
+            <!-- Calculator Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Input Section -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-cyan-100">
+                    <h3 class="text-2xl font-bold text-cyan-900 mb-8">Loan Details</h3>
+                    
+                    <!-- Loan Amount -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-semibold text-cyan-900 mb-3">
+                            Loan Amount
+                            <span class="text-cyan-600">₹<span id="loanDisplay">500000</span></span>
+                        </label>
+                        <input type="range" id="loanAmount" class="slider" min="100000" max="10000000" step="10000" value="500000">
+                        <div class="flex justify-between text-xs text-cyan-600 mt-2">
+                            <span>₹1,00,000</span>
+                            <span>₹1 Cr</span>
+                        </div>
+                    </div>
+
+                    <!-- Tenure -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-semibold text-cyan-900 mb-3">
+                            Tenure (Months)
+                            <span class="text-cyan-600"><span id="tenureDisplay">60</span> months</span>
+                        </label>
+                        <input type="range" id="tenure" class="slider" min="6" max="360" step="1" value="60">
+                        <div class="flex justify-between text-xs text-cyan-600 mt-2">
+                            <span>6 months</span>
+                            <span>30 years</span>
+                        </div>
+                    </div>
+
+                    <!-- Interest Rate -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-semibold text-cyan-900 mb-3">
+                            Interest Rate (% p.a.)
+                            <span class="text-cyan-600"><span id="rateDisplay">8.5</span>%</span>
+                        </label>
+                        <input type="range" id="interestRate" class="slider" min="5" max="15" step="0.1" value="8.5">
+                        <div class="flex justify-between text-xs text-cyan-600 mt-2">
+                            <span>5%</span>
+                            <span>15%</span>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button onclick="calculateEMI()" class="cta-button w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-bold rounded-lg mt-6 hover:shadow-lg">
+                        Calculate EMI
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="space-y-6">
+                    <!-- Monthly EMI -->
+                    <div class="result-card rounded-2xl p-6 shadow-lg">
+                        <p class="text-cyan-600 text-sm font-semibold uppercase tracking-wider mb-2">Monthly EMI</p>
+                        <p class="text-4xl font-bold text-cyan-900">₹<span id="emiResult">9,987</span></p>
+                        <p class="text-xs text-cyan-500 mt-2">Per month payment</p>
+                    </div>
+
+                    <!-- Total Interest -->
+                    <div class="result-card rounded-2xl p-6 shadow-lg stat-item">
+                        <p class="text-cyan-600 text-sm font-semibold uppercase tracking-wider mb-2">Total Interest Payable</p>
+                        <p class="text-4xl font-bold text-cyan-900">₹<span id="interestResult">99,220</span></p>
+                        <p class="text-xs text-cyan-500 mt-2">Over loan tenure</p>
+                    </div>
+
+                    <!-- Total Amount -->
+                    <div class="result-card rounded-2xl p-6 shadow-lg stat-item">
+                        <p class="text-cyan-600 text-sm font-semibold uppercase tracking-wider mb-2">Total Amount Payable</p>
+                        <p class="text-4xl font-bold text-cyan-900">₹<span id="totalResult">599,220</span></p>
+                        <p class="text-xs text-cyan-500 mt-2">Principal + Interest</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="bg-gradient-to-r from-cyan-50 to-cyan-100 rounded-2xl p-8 sm:p-12 text-center border-2 border-cyan-200">
+                <h3 class="text-2xl sm:text-3xl font-bold text-black mb-4">Ready to Apply?</h3>
+                <p class="text-gray-500 mb-8 max-w-2xl mx-auto">Get your loan approved in minutes with 360Finvest. Competitive rates, hassle-free process, and instant disbursal.</p>
+                <button onclick="openLoanApplication()" class="cta-button px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-bold rounded-lg text-lg shadow-lg hover:shadow-xl">
+                    Apply for a Loan Now
+                </button>
+                <p class="text-gray-600 text-sm mt-4">✓ 100% Secure & Confidential</p>
+            </div>
+
+            <!-- Trust Section -->
+            <div class="mt-16 text-center">
+                <p class="text-cyan-700 font-semibold mb-6">Trusted by lakhs of customers across India</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <p class="text-3xl font-bold text-cyan-600">50L+</p>
+                        <p class="text-cyan-600 text-sm">Happy Customers</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-cyan-600">₹5000Cr</p>
+                        <p class="text-cyan-600 text-sm">Disbursed</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-cyan-600">24hrs</p>
+                        <p class="text-cyan-600 text-sm">Approval</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-cyan-600">5.0★</p>
+                        <p class="text-cyan-600 text-sm">Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+      <!-- Header Features -->
+      <header class="footer-header">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <img
+                src="./images/logo.png"
+                alt="360 Finvest Logo"
+                class="h-12"
+              />
+            </div>
+
+            <!-- Features -->
+            <div class="hidden md:flex flex-wrap items-center gap-8">
+              <div class="flex items-center space-x-2 fp-feature-badge">
+                <svg
+                  class="w-5 h-5 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="text-sm text-white whitespace-nowrap"
+                  >24/7 Support</span
+                >
+              </div>
+              <div class="flex items-center space-x-2 fp-feature-badge">
+                <svg
+                  class="w-5 h-5 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+                <span class="text-sm text-white whitespace-nowrap"
+                  >Weekly updates</span
+                >
+              </div>
+              <div class="flex items-center space-x-2 fp-feature-badge">
+                <svg
+                  class="w-5 h-5 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+                <span class="text-sm text-white whitespace-nowrap"
+                  >Secure and compliant</span
+                >
+              </div>
+              <div class="flex items-center space-x-2 fp-feature-badge">
+                <svg
+                  class="w-5 h-5 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="text-sm text-white whitespace-nowrap"
+                  >99.9% Uptime</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Footer -->
+      <footer class="fp-main-footer bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            <!-- Product Column -->
+            <div class="fp-footer-column">
+              <h3 class="text-gray-900 font-semibold text-lg mb-6">PRODUCT</h3>
+              <ul class="space-y-4">
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Overview</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Features</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Solutions</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Tutorials</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Pricing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="fp-footer-column">
+              <h3 class="text-gray-900 font-semibold text-lg mb-6">COMPANY</h3>
+              <ul class="space-y-4">
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >News</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Media Kit</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="fp-footer-column">
+              <h3 class="text-gray-900 font-semibold text-lg mb-6">
+                RESOURCES
+              </h3>
+              <ul class="space-y-4">
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Tutorials</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Support</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Services</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Collaborate Column -->
+            <div class="fp-footer-column">
+              <h3 class="text-gray-900 font-semibold text-lg mb-6">
+                COLLABORATE
+              </h3>
+              <ul class="space-y-4">
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Partners</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Partners Program</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Affiliate Program</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >Community</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="fp-footer-link text-gray-600 block"
+                    >HR Partner Program</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="fp-footer-column">
+              <h3 class="text-gray-900 font-semibold text-lg mb-6">CONTACT</h3>
+              <ul class="space-y-4">
+                <li>
+                  <a
+                    href="tel:+18341234567899"
+                    class="fp-footer-link text-gray-900 font-semibold block"
+                    >+91 7982894555</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:support@example.com"
+                    class="fp-footer-link text-gray-600 block"
+                    >info@360finvest.com</a
+                  >
+                </li>
+                <li class="text-gray-600 leading-relaxed">
+                  Imperia Bandhan, B-Block Office No-311, Plot no. 44-45, Sector
+                  Knowledge Park 5, Greater Noida West
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="fp-divider h-px"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0"
+          >
+            <!-- Copyright -->
+            <div class="text-gray-500 text-sm">
+              Copyright © 2024
+              <span class="font-semibold text-grey-400"> 360 Finvest </span> All
+              rights reserved
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex items-center space-x-4">
+              <a
+                href="#"
+                class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600"
+                aria-label="Facebook"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600"
+                aria-label="Instagram"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600"
+                aria-label="Twitter"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600"
+                aria-label="YouTube"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="flex items-center space-x-6 text-sm">
+              <a
+                href="#"
+                class="text-gray-500 hover:text-blue-500 transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-500 hover:text-blue-500 transition-colors"
+                >Contact</a
+              >
+              <a
+                href="#"
+                class="text-gray-500 hover:text-blue-500 transition-colors"
+                >Terms and Conditions</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+        const loanAmount = document.getElementById('loanAmount');
+        const tenure = document.getElementById('tenure');
+        const interestRate = document.getElementById('interestRate');
+        
+        const loanDisplay = document.getElementById('loanDisplay');
+        const tenureDisplay = document.getElementById('tenureDisplay');
+        const rateDisplay = document.getElementById('rateDisplay');
+        
+        // Update display values
+        loanAmount.addEventListener('input', function() {
+            loanDisplay.textContent = new Intl.NumberFormat('en-IN').format(this.value);
+            calculateEMI();
+        });
+        
+        tenure.addEventListener('input', function() {
+            const years = (this.value / 12).toFixed(1);
+            tenureDisplay.textContent = this.value + ' (' + years + ' years)';
+            calculateEMI();
+        });
+        
+        interestRate.addEventListener('input', function() {
+            rateDisplay.textContent = this.value;
+            calculateEMI();
+        });
+        
+        // EMI Calculation Formula: EMI = P * [r(1+r)^n] / [(1+r)^n - 1]
+        function calculateEMI() {
+            const P = parseFloat(loanAmount.value);
+            const n = parseFloat(tenure.value);
+            const R = parseFloat(interestRate.value) / 12 / 100;
+            
+            if (R === 0) {
+                var EMI = P / n;
+            } else {
+                var EMI = (P * R * Math.pow(1 + R, n)) / (Math.pow(1 + R, n) - 1);
+            }
+            
+            const totalAmount = EMI * n;
+            const totalInterest = totalAmount - P;
+            
+            // Update results
+            document.getElementById('emiResult').textContent = new Intl.NumberFormat('en-IN', {
+                maximumFractionDigits: 0
+            }).format(EMI.toFixed(0));
+            
+            document.getElementById('interestResult').textContent = new Intl.NumberFormat('en-IN', {
+                maximumFractionDigits: 0
+            }).format(totalInterest.toFixed(0));
+            
+            document.getElementById('totalResult').textContent = new Intl.NumberFormat('en-IN', {
+                maximumFractionDigits: 0
+            }).format(totalAmount.toFixed(0));
+        }
+        
+        // CTA Button Handler
+        function openLoanApplication() {
+            const loanAmt = loanAmount.value;
+            const rate = interestRate.value;
+            const months = tenure.value;
+            
+            alert(`Processing your loan application:\n\nLoan Amount: ₹${new Intl.NumberFormat('en-IN').format(loanAmt)}\nInterest Rate: ${rate}%\nTenure: ${months} months\n\nRedirecting to application form...`);
+            // In production, this would redirect to the actual application form
+        }
+        
+        // Initial calculation
+        calculateEMI();
+    </script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Against Property - Up to ₹50 Crore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <div class="blue-gradient w-full pb-1">
+     <nav class="flex  items-center justify-between container mx-auto pt-5 px-4">
+        <div class="flex items-center gap-4">
+          <img class="w-28 md:w-[10vw]" src="./images/logo.png" alt="360finvest_logo" />
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex gap-8 font-semibold text-white items-center">
+          <a href="/index.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Home</a>
+          
+          <!-- Replace the existing Loans link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Loans 
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 w-48 z-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/personal-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Personal Loan</a>
+                <a href="/home-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home Loan</a>
+                <a href="/bussiness-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Business Loan</a>
+                 <a href="/loan-aginst-property.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Loan Against Property</a>
+                
+              </div>
+            </div>
+          </div>
+           <!-- Replace the existing Insurance link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Insurance
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 z-10 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/life-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Life Insurance</a>
+                <a href="/health-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Health Insurance</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/emi-Calculater.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">EMI Calculater </a>
+          <a href="/aboutus.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">About Us </a>
+          <a href="/blog.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Blogs </a>
+          <a href="/contact.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Contact </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <button class="flex text-black px-6 gap-2 py-3 rounded-full font-semibold bg-white">
+            Apply Now
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobileMenuButton" class="md:hidden text-white p-2 rounded-md focus:outline-none" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="fixed inset-y-0 right-0 z-50 w-3/4 max-w-xs bg-blue-800/95 text-white transform translate-x-full transition-transform duration-300 md:hidden">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+              <img class="w-28" src="./images/logo.png" alt="logo" />
+              <button id="mobileMenuClose" class="p-2 focus:outline-none" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Replace the existing mobile menu nav section with this: -->
+            <nav class="flex flex-col gap-4">
+              <a href="/index.html" class="block py-2 px-1 text-white font-medium">Home</a>
+              
+              <!-- Loans Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Loans
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/personal-loan.html" class="block py-2 text-gray-300 hover:text-white">Personal Loan</a>
+                  <a href="/home-loan.html" class="block py-2 text-gray-300 hover:text-white">Home Loan</a>
+                  <a href="/bussiness-loans.html" class="block py-2 text-gray-300 hover:text-white">Business Loan</a>
+                  <a href="/loan-aginst-property.html" class="block py-2 text-gray-300 hover:text-white">Loan Against Property</a>
+                </div>
+              </div>
+
+              <!-- Insurance Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Insurance
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/life-insurance.html" class="block py-2 text-gray-300 hover:text-white">Life Insurance</a>
+                  <a href="/health-insurance.html" class="block py-2 text-gray-300 hover:text-white">Health Insurance</a>
+                </div>
+              </div>
+
+              <a href="/emi-Calculater.html" class="block py-2 px-1 text-white font-medium">EMI Calculator</a>
+              <a href="/aboutus.html" class="block py-2 px-1 text-white font-medium">About Us</a>
+              <a href="/blog.html" class="block py-2 px-1 text-white font-medium">Blogs</a>
+              <a href="/contact.html" class="block py-2 px-1 text-white font-medium">Contact</a>
+
+              <div class="mt-4">
+                <button class="w-full bg-white text-blue-800 py-2 rounded-full font-semibold">Apply Now</button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+          <!-- Banner Section -->
+  <section class="relative h-[350px]  blue-gradient overflow-hidden flex items-center justify-center
+                lg:rounded-b-[100px] md-rounded-b-none">
+
+
+
+    <!-- Left Pattern -->
+    <img src="./images/h1_bg-left.png" alt="Left Pattern"
+         class="absolute -left-40 top-[60%] -translate-y-1/2 h-[150%] lg:w-[700px] md:w-[400px] max-[640px]:w-[300px] object-contain">
+
+    <!-- Right Pattern -->
+    <img src="./images/h1_bg-right.png" alt="Right Pattern"
+         class="absolute -right-40 top-[60%] -translate-y-1/2 h-[150%] lg:w-[700px] 
+         md:w-[400px] max-[640px]:w-[300px] object-contain">
+
+    <!-- Content -->
+    <div class="relative z-10 px-4 text-center">
+      <h1 class="lg:text-[64px] md:text-[50px] max-[640px]:text-[32px] text-white font-bricolage font-bold mb-3">Loan Against Property</h1>
+      <nav class="flex justify-center items-center space-x-2 text-[16px] font-dmsans">
+        <a href="#" class="text-breadcrumbGray text-white hover:text-cyan-600 transition">Home</a>
+        <span class="inline-flex items-center justify-center text-cyan-500">•</span>
+        <span class="text-[16px] text-cyan-500">Loan Against Property</span>
+      </nav>
+    </div>
+
+  </section>
+    <!-- Hero Section -->
+    <div class="bg-white py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="text-cyan-600">Loan Against Property</span> up to ₹50 Crore
+            </h1>
+            <p class="text-gray-600 max-w-4xl mx-auto">
+                A loan against property, or LAP, is a mortgage or secured loan that is availed after pledging a property as collateral. The interest rate starts at 9% p.a. You can avail of a LAP up to 80% of the property value for a maximum of 15 years.
+            </p>
+        </div>
+    </div>
+
+    <!-- Application Form Section -->
+    <div class="bg-blue-50 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Image -->
+                <div class="flex justify-center">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold mb-2">
+                            <span class="text-cyan-600">Loan Against Property</span> Offers Starting<br>
+                            <span class="text-4xl">@ 9% p.a.</span>
+                        </h2>
+                        <div class="mt-8">
+                            <img src="./images/Loan_Against_Property_Banner_Image_60bca7102f.avif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <form id="lapForm">
+                        <!-- Full Name -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                Full Name (as per PAN Card) <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" placeholder="Please enter your full name" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                Mobile Number <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" placeholder="Enter your mobile number" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+
+                        <!-- Email ID -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                Email ID <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" placeholder="Enter your email id" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                Date of Birth <span class="text-red-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <select class="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option>Year</option>
+                                </select>
+                                <select class="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option>Month</option>
+                                </select>
+                                <select class="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option>Day</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="mb-6">
+                            <label class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span class="text-sm text-gray-600">
+                                    I accept Privacy Policy and Terms and Conditions. I appoint MyMoneyMantra as authorized representative. 
+                                    <a href="#" class="text-cyan-600 underline">Read more</a>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                                class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 rounded-md transition duration-200">
+                            Get Free Quotes
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Interest Rates Table -->
+    <div class="bg-gray-50 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8"><span class="text-cyan-600">Loan Against Property</span> Interest Rates of All Banks and NBFCs 2025</h2>
+            
+            <div class="overflow-x-auto bg-white rounded-lg shadow">
+                <table class="w-full">
+                    <thead class="bg-gray-100 border-b-2 border-gray-200">
+                        <tr>
+                            <th class="px-6 py-4 text-left font-semibold text-gray-700">Bank Name</th>
+                            <th class="px-6 py-4 text-left font-semibold text-gray-700">Interest Rate</th>
+                            <th class="px-6 py-4 text-left font-semibold text-gray-700">Processing Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">HDFC Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.50% - 11.00%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 1.50% of loan amount + taxes</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">IDFC First</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.00% - 20.00%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 3% of Loan Amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">HSBC Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.75%</td>
+                            <td class="px-6 py-4 text-gray-700">1% of loan amount + GST</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700hover:underline">Kotak Mahindra Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.50% - 10.50%</td>
+                            <td class="px-6 py-4 text-gray-700">1% of loan amount + GST</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">PNB Housing</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.24% - 12.45%</td>
+                            <td class="px-6 py-4 text-gray-700">2% of loan amount + GST</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">State Bank of India</a></td>
+                            <td class="px-6 py-4 text-gray-700">10.10% - 11.65%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 1% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Federal Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">11.15% - 14.80%</td>
+                            <td class="px-6 py-4 text-gray-700">0.50% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Home First</a></td>
+                            <td class="px-6 py-4 text-gray-700">12.80% - 18.50%</td>
+                            <td class="px-6 py-4 text-gray-700">Rs.2,500 + GST</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Bank of India</a></td>
+                            <td class="px-6 py-4 text-gray-700">10.10%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 0.50% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Bank of Baroda</a></td>
+                            <td class="px-6 py-4 text-gray-700">10.85% - 16.50%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 1% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">IDBI Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.50% - 11.45%</td>
+                            <td class="px-6 py-4 text-gray-700">1% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Central Bank of India</a></td>
+                            <td class="px-6 py-4 text-gray-700">9.75% - 13%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 1% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Bank of Maharashtra</a></td>
+                            <td class="px-6 py-4 text-gray-700">10.95% - 11.95%</td>
+                            <td class="px-6 py-4 text-gray-700">1% of loan amount + GST</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">Jammu & Kashmir Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">11.45%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 1% of loan amount + GST</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">South Indian Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">13.15% - 14.40%</td>
+                            <td class="px-6 py-4 text-gray-700">1% of loan amount</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4"><a href="#" class="text-grey-700 hover:underline">YES Bank</a></td>
+                            <td class="px-6 py-4 text-gray-700">8.85%</td>
+                            <td class="px-6 py-4 text-gray-700">Up to 1% of loan amount + GST</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <!-- Eligibility Section -->
+    <div class="bg-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8"><span  class="text-cyan-600">Loan Against Property</span> Eligibility</h2>
+            <p class="text-gray-600 mb-8">Each lender has their eligibility criteria for availing LAP. Below are some common criteria to be eligible for a mortgage loan:</p>
+            
+            <div class="space-y-6">
+                <div>
+                    <p class="text-gray-800"><span class="font-semibold">Age:</span> Minimum 21 years and maximum 65 years.</p>
+                </div>
+                
+                <div>
+                    <p class="text-gray-800"><span class="font-semibold">Profession:</span> Both self-employed individuals and salaried persons with a regular source of income are eligible for a Loan Against Property.</p>
+                </div>
+                
+                <div>
+                    <p class="text-gray-800"><span class="font-semibold">Joint applications:</span> Co-applicants are permissible. Lenders can accept the income of the co-applicants to arrive at eligibility.</p>
+                </div>
+                
+                <div>
+                    <p class="text-gray-800 font-semibold mb-2">Ownership:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                        <li>The applicant should have unencumbered property in their name. The property can be residential, commercial, or industrial.</li>
+                        <li>Agricultural land is not acceptable as security for the loan.</li>
+                        <li>Many banks stipulate that the property should either be vacant or self-occupied.</li>
+                        <li>Some of the banks do not consider a property that is let out on rent or lease to third parties.</li>
+                        <li>Some lending institutions sanction loans against vacant residential plots</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <p class="text-gray-800"><span class="font-semibold">Margin:</span> The margin requirement for a Loan Against Property can be 10% to 50% of the market value of the property.</p>
+                </div>
+                
+                <div>
+                    <p class="text-gray-800"><span class="font-semibold">Current obligations:</span> The take-home pay norms come into effect. Usually, one should have a take-home pay of 50% after accounting for all the EMIs, including the proposed one for the Loan against Property. Hence, the borrowers should clear their current obligations.</p>
+                </div>
+                
+                <div>
+                    <p class="text-gray-800"><span class="font-semibold">Credit history:</span> The lending banks are members of CIBIL (Credit Information Bureau (India) Limited). They can pull out the records from CIBIL to determine your credit score. Usually, a credit score in the range of 600 and above is acceptable.</p>
+                </div>
+                
+                <div class="mt-6">
+                    <p class="text-gray-700">You can also check the meaning of the <a href="#" class="text-cyan-600 underline">RLLR Rate</a> Online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+
+
+    <!-- Documents Required Section -->
+    <div class="bg-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Documents Required for <span class="text-cyan-600">Mortgage Loan</span></h2>
+            <p class="text-gray-600 mb-8">The following are the documents required for a mortgage loan:</p>
+            
+            <div class="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
+                <table class="w-full">
+                    <thead class="bg-gray-100 border-b-2 border-gray-200">
+                        <tr>
+                            <th class="px-6 py-4 text-left font-semibold text-gray-700 w-1/4">Document Type</th>
+                            <th class="px-6 py-4 text-left font-semibold text-gray-700">Documents Acceptable</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-6 font-semibold text-gray-800 align-top">Identity Proof</td>
+                            <td class="px-6 py-6">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>PAN Card</li>
+                                    <li>Aadhaar Card</li>
+                                    <li>Voter ID</li>
+                                    <li>Passport</li>
+                                    <li>Driving Licence</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-6 font-semibold text-gray-800 align-top">Address Proof</td>
+                            <td class="px-6 py-6">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>Registered Rent agreement</li>
+                                    <li>Aadhaar Card</li>
+                                    <li>Driving Licence</li>
+                                    <li>Lease agreement</li>
+                                    <li>Passport</li>
+                                    <li>Latest gas/Electricity bill</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-6 font-semibold text-gray-800 align-top">Income/Financial Documents</td>
+                            <td class="px-6 py-6">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>Salary slips for the last 6 months for salaried employees (In addition, IT returns for the previous 3 years along with Form 16).</li>
+                                    <li>IT returns for the past 3 years for self-employed persons (Some banks accept 2 years IT returns as well).</li>
+                                    <li>Statement of A/c for the past 1 year where your salary is credited (in the case of salaried people).</li>
+                                    <li>Profit and Loss statement and Balance sheet for the last 2 years in the case of self-employed persons.</li>
+                                    <li>Sales tax, GST registration certificates, if applicable.</li>
+                                    <li>Partnership deed in case of partnership firms (if the applicant is one of the partners or the firm itself).</li>
+                                    <li>Certificate of Incorporation for limited companies (if the applicant is one of the directors or the company itself).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-6 font-semibold text-gray-800 align-top">Property Documents</td>
+                            <td class="px-6 py-6">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>Copies of all property documents that can establish the chain of ownership for the past 30 years</li>
+                                    <li>Encumbrance certificate for 30 years</li>
+                                    <li>Property tax paid receipt</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-6 font-semibold text-gray-800 align-top">Other Documents</td>
+                            <td class="px-6 py-6">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>Loan application form</li>
+                                    <li>Processing fee cheque</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+         <!-- Header Features -->
+    <header class="footer-header">
+    <div class="container  mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="./images/logo.png" alt="360 Finvest Logo" class="h-12">
+            </div>
+            
+            <!-- Features -->
+            <div class="hidden md:flex flex-wrap items-center gap-8">
+                <div class="flex items-center  space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">24/7 Support</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Weekly updates</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Secure and compliant</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">99.9% Uptime</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Footer -->
+    <footer class="fp-main-footer bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <!-- Product Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Loans</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/home-loan.html" class="fp-footer-link text-gray-600 block">Hoam Loan</a></li>
+                        <li><a href="/personal-loan.html" class="fp-footer-link text-gray-600 block">Personal Loan</a></li>
+                        <li><a href="/bussiness-loans.html" class="fp-footer-link text-gray-600 block">Bussiness Loan</a></li>
+                        <li><a href="/loan-aginst-property.html" class="fp-footer-link text-gray-600 block">Loan Against Property</a></li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+
+
+                   <!-- Resources Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Insurance</h3>
+                    <ul class="space-y-4">
+                          <li><a href="/health-insurance.html" class="fp-footer-link text-gray-600 block">Health Insurance</a></li>
+                          <li><a href="/life-insurance.html" class="fp-footer-link text-gray-600 block">Life Insurance</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/index.html" class="fp-footer-link text-gray-600 block">Home</a></li>
+                        <li><a href="/aboutus.html" class="fp-footer-link text-gray-600 block">About Us</a></li>
+                        <li><a href="/blog.html" class="fp-footer-link text-gray-600 block">Blog</a></li>
+                        <li><a href="/contact.html" class="fp-footer-link text-gray-600 block">Contact</a></li>
+                        
+                    </ul>
+                </div>
+
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Demat and Investment Tools</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/open-demat-account.html" class="fp-footer-link text-gray-600 block">Open Demat Account</a></li>
+                        <li><a href="/emi-Calculater.html" class="fp-footer-link text-gray-600 block">EMI Calculater</a></li>
+                        <li><a href="/equity.html" class="fp-footer-link text-gray-600 block">Equity</a></li>
+                        
+                        
+                    </ul>
+                </div>
+
+             
+
+             
+                <!-- Contact Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">CONTACT</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:+18341234567899" class="fp-footer-link text-gray-600  block">+91 7982894555</a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@example.com" class="fp-footer-link text-gray-600 block">info@360finvest.com</a>
+                        </li>
+                        <li class="text-gray-600 leading-relaxed">
+                           Imperia Bandhan, B-Block Office No-311, Plot no. 44-45, Sector Knowledge Park 5, Greater Noida West
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="fp-divider h-px"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm">
+                    Copyright © 2024 <span class="font-semibold text-grey-400"> 360 Finvest </span> All rights reserved
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex items-center space-x-6  text-sm">
+                    <a href="/privacy-policy.html" class="text-gray-500 hover:text-blue-500 transition-colors">Privacy Policy</a>
+                   
+                    <a href="/terms-conditions.html" class="text-gray-500 hover:text-blue-500 transition-colors">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('lapForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted! This is a demo page.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>360Finvest-Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+   
+
+    <div class="Hero-section rounded-b-[70px]">
+      <!-- Responsive nav --> 
+      <nav class="flex  items-center justify-between container mx-auto pt-5 px-4">
+        <div class="flex items-center gap-4">
+          <img class="w-28 md:w-[10vw]" src="./images/logo.png" alt="360finvest_logo" />
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex gap-8 font-semibold text-white items-center">
+          <a href="/index.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Home</a>
+          
+          <!-- Replace the existing Loans link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Loans 
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 w-48 z-10 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/personal-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Personal Loan</a>
+                <a href="/home-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home Loan</a>
+                <a href="/bussiness-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Business Loan</a>
+                 <a href="/loan-aginst-property.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Loan Against Property</a>
+                
+              </div>
+            </div>
+          </div>
+           <!-- Replace the existing Insurance link in the desktop nav with: -->
+          <div class="relative group">
+            <a href="#" class="fp-nav-link hover:text-blue-400 transition flex items-center gap-1">
+              Insurance
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </a>
+            
+            <!-- Dropdown menu -->
+            <div class="absolute left-0 mt-2 z-10 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div class="py-1">
+                <a href="/life-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Life Insurance</a>
+                <a href="/health-insurance.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Health Insurance</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/emi-Calculater.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">EMI Calculater </a>
+          <a href="/aboutus.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">About Us </a>
+          <a href="/blog.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Blogs </a>
+          <a href="/contact.html" class="fp-nav-link hover:text-blue-400 transition flex gap-1">Contact </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <button class="flex text-black px-6 gap-2 py-3 rounded-full font-semibold bg-white">
+            Apply Now
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobileMenuButton" class="md:hidden text-white p-2 rounded-md focus:outline-none" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="fixed inset-y-0 right-0 z-50 w-3/4 max-w-xs bg-blue-800/95 text-white transform translate-x-full transition-transform duration-300 md:hidden">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+              <img class="w-28" src="./images/logo.png" alt="logo" />
+              <button id="mobileMenuClose" class="p-2 focus:outline-none" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Replace the existing mobile menu nav section with this: -->
+            <nav class="flex flex-col gap-4">
+              <a href="/index.html" class="block py-2 px-1 text-white font-medium">Home</a>
+              
+              <!-- Loans Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Loans
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/personal-loan.html" class="block py-2 text-gray-300 hover:text-white">Personal Loan</a>
+                  <a href="/home-loan.html" class="block py-2 text-gray-300 hover:text-white">Home Loan</a>
+                  <a href="/bussiness-loans.html" class="block py-2 text-gray-300 hover:text-white">Business Loan</a>
+                  <a href="/loan-aginst-property.html" class="block py-2 text-gray-300 hover:text-white">Loan Against Property</a>
+                </div>
+              </div>
+
+              <!-- Insurance Dropdown -->
+              <div class="block">
+                <button class="flex items-center justify-between w-full py-2 px-1 text-white font-medium">
+                  Insurance
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2 mt-1">
+                  <a href="/life-insurance.html" class="block py-2 text-gray-300 hover:text-white">Life Insurance</a>
+                  <a href="/health-insurance.html" class="block py-2 text-gray-300 hover:text-white">Health Insurance</a>
+                </div>
+              </div>
+
+              <a href="/emi-Calculater.html" class="block py-2 px-1 text-white font-medium">EMI Calculator</a>
+              <a href="/aboutus.html" class="block py-2 px-1 text-white font-medium">About Us</a>
+              <a href="/blog.html" class="block py-2 px-1 text-white font-medium">Blogs</a>
+              <a href="/contact.html" class="block py-2 px-1 text-white font-medium">Contact</a>
+
+              <div class="mt-4">
+                <button class="w-full bg-white text-blue-800 py-2 rounded-full font-semibold">Apply Now</button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero content: responsive layout -->
+      <div class="flex flex-col-reverse  md:flex-row items-center justify-between pt-12 md:pt-24 px-6 md:px-0">
+        <div class="left-div flex-1  md:pl-40">
+          <div>
+    <div class="flex items-center w-[320px] gap-2 mb-5 text-white p-1 rounded-xl 
+      bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+       viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" 
+       stroke-linecap="round" stroke-linejoin="round" 
+       class="lucide lucide-coins">
+       <circle cx="8" cy="8" r="6"/>
+       <path d="M18.09 10.37A6 6 0 1 1 10.34 18"/>
+       <path d="M7 6h1v4"/>
+       <path d="m16.71 13.88.7.71-2.82 2.82"/>
+       </svg>
+  <span class="font-semibold text-sm">Your Trusted Partner in Finance & Growth</span>
+</div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6 sm:mb-8">
+              Let’s take your <br />
+              analytics to <br />
+              the <span class="next-level ">next level</span>
+            </h1>
+            <div class="fp-benefits-list space-y-4 mb-6 sm:mb-8">
+              <div class="fp-benefit-item flex items-center gap-3">
+                <div
+                  class="fp-check-icon w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-white text-sm"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-bounce-right"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M4 15.5c3 -1 5.5 -.5 8 4.5c.5 -3 1.5 -5.5 3 -8"
+                      />
+                      <path d="M18 9a2 2 0 1 1 0 -4a2 2 0 0 1 0 4z" /></svg
+                  ></span>
+                </div>
+                <span class="fp-benefit-text text-gray-300 text-lg"
+                  >Put a stop to endless fees and interest</span
+                >
+              </div>
+              <div class="fp-benefit-item flex items-center gap-3">
+                <div
+                  class="fp-check-icon w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-white text-sm"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-bounce-right"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M4 15.5c3 -1 5.5 -.5 8 4.5c.5 -3 1.5 -5.5 3 -8"
+                      />
+                      <path d="M18 9a2 2 0 1 1 0 -4a2 2 0 0 1 0 4z" /></svg
+                  ></span>
+                </div>
+                <span class="fp-benefit-text text-gray-300 text-lg"
+                  >Cut monthly payments by 40% or more</span
+                >
+              </div>
+              <div class="fp-benefit-item flex items-center gap-3">
+                <div
+                  class="fp-check-icon w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-white text-sm"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-bounce-right"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M4 15.5c3 -1 5.5 -.5 8 4.5c.5 -3 1.5 -5.5 3 -8"
+                      />
+                      <path d="M18 9a2 2 0 1 1 0 -4a2 2 0 0 1 0 4z" /></svg
+                  ></span>
+                </div>
+                <span class="fp-benefit-text text-gray-300 text-lg"
+                  >Get out of debt in 24-48 months</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="fp-action-buttons flex flex-col sm:flex-row gap-4">
+            <button
+              class="fp-learn-btn  flex gap-2 bg-blue-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-600 transition"
+            >
+             Apply Now
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-right-icon lucide-arrow-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" /></svg
+              ></span>
+            </button>
+            <button
+              class="fp-video-btn flex bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition items-center gap-2"
+            >
+              <span class="fp-play-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-play-icon lucide-play"
+                >
+                  <path
+                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+                  /></svg
+              ></span>
+              Watch video
+            </button>
+          </div>
+        </div>
+
+        <div class="right-div flex-1 flex items-center justify-center mb-8 md:mb-0">
+          <img class="w-full max-w-md md:max-w-[30vw] object-cover rounded-[20px]" src="./images/demo2.wpopal.com_23_Image (4).png" alt="">
+        </div>
+      </div>
+    </div>
+
+       <div class="max-w-7xl mx-auto px-4 py-16">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/>
+                </svg>
+                <span class="text-gray-600 font-medium">About 360 Finvest</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Get to know more<br>
+                about <span class="text-cyan-500">360 Finvest</span>
+            </h1>
+            
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                We are customer focused digital bank that provides complete financial solutions to meet your entire financial need
+            </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-510">
+            <!-- Local Business Finance Card -->
+            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 card-hover">
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center icon-circle float-animation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+                    Trust
+                </h3>
+                
+                <p class="text-gray-600 text-center mb-8 leading-relaxed">
+                    Take control of your payments. Say goodbye to credit card fees and say hello to cash
+                </p>
+                
+                <div class="text-center">
+                    <a href="#" class="learn-more-link flex gap-2 items-center justify-center text-cyan-500 font-semibold hover:text-cyan-600">
+                        Learn More <span><svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg></span>
+                       
+                    </a>
+                </div>
+            </div>
+
+            <!-- Built for Global Payments Card -->
+            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 card-hover" style="animation-delay: 0.2s;">
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center icon-circle float-animation" style="animation-delay: 1s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+                    Transparency
+                </h3>
+                
+                <p class="text-gray-600 text-center mb-8 leading-relaxed">
+                    Provide people across the globe easy access to financial services worldwide.
+                </p>
+                
+                <div class="text-center">
+                    <a href="#" class="learn-more-link text-cyan-500  gap-2 flex items-center justify-center font-semibold hover:text-cyan-600">
+                        Learn More
+                       <span><svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Make Internet of Money Card -->
+            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 card-hover" style="animation-delay: 0.4s;">
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-cyan-500 rounded-full flex items-center justify-center gap-2 icon-circle float-animation" style="animation-delay: 2s;">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="white"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-medal-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3h6l3 7l-6 2l-6 -2z" /><path d="M12 12l-3 -9" /><path d="M15 11l-3 -8" /><path d="M12 19.5l-3 1.5l.5 -3.5l-2 -2l3 -.5l1.5 -3l1.5 3l3 .5l-2 2l.5 3.5z" /></svg>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+                    Expertise
+                </h3>
+                
+                <p class="text-gray-600 text-center mb-8 leading-relaxed">
+                    Powered by cross blockchain technology compatible with wallets and exchanges.
+                </p>
+                
+                <div class="text-center">
+                    <a href="#" class="learn-more-link  flex items-center justify-center gap-2 text-cyan-500 font-semibold hover:text-cyan-600">
+                        Learn More
+                        <span><svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- statistics section -->
+<div class="  flex items-center  m-2 justify-center pb-10">
+    <div class="w-full max-w-7xl">
+        <div class="bg-gradient-to-r from-teal-600 via-blue-600 to-blue-800 rounded-3xl shadow-2xl p-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-3">
+                        <span id="stat1">0</span>
+                    </div>
+                    <div class="text-white text-lg font-medium">Total States</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="text-center md:border-l border-white/30">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-3">
+                        <span id="stat2">0</span>+
+                    </div>
+                    <div class="text-white text-lg font-medium">Lending Partners</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="text-center md:border-l border-white/30">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-3">
+                        <span id="stat3">0</span>+
+                    </div>
+                    <div class="text-white text-lg font-medium">Team members</div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="text-center md:border-l border-white/30">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-3">
+                        <span id="stat4">0</span>+
+                    </div>
+                    <div class="text-white text-lg font-medium">Years of Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function animateCounter(element, target, duration, hasComma = false) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    start = target;
+                    clearInterval(timer);
+                }
+                if (hasComma) {
+                    element.textContent = Math.floor(start).toLocaleString();
+                } else {
+                    element.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+
+        // Start animation when page loads
+        window.addEventListener('load', () => {
+            animateCounter(document.getElementById('stat1'), 28, 2000);
+            animateCounter(document.getElementById('stat2'), 130, 2000);
+            animateCounter(document.getElementById('stat3'), 2000, 2000, true);
+            animateCounter(document.getElementById('stat4'), 4, 2000);
+        });
+
+        // Optional: Re-trigger animation on scroll (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(document.getElementById('stat1'), 28, 2000);
+                    animateCounter(document.getElementById('stat2'), 130, 2000);
+                    animateCounter(document.getElementById('stat3'), 2000, 2000, true);
+                    animateCounter(document.getElementById('stat4'), 4, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.bg-gradient-to-r'));
+    </script>
+</div>
+
+
+    <div  class="gradient-bg min-h-screen py-12   md:m-10 rounded-[50px]">
+
+       <div class="max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
+                </svg>
+                <span class="text-gray-600 font-medium">Our Services</span>
+            </div>
+            <h1 class="text-5xl font-bold mb-4">
+                Our services are designed for<br>
+                <span class="text-blue-500">businesses of all sizes</span>
+            </h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Explore the our services and benefits at  360 Finvest, tailored to provide a modern, secure experience.
+            </p>
+        </div>
+
+        <!-- Services Grid - Row 1 -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <!-- Funds Remittance Card -->
+            <div class="service-card bg-white rounded-3xl m-2 overflow-hidden shadow-lg">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop" 
+                         alt="Funds Remittance" 
+                         class="service-image w-full h-64 object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-4">Home Loan</h3>
+                    <p class="text-gray-600 mb-6">
+                        Turn your dream home into reality with 360 Finvest’s easy and affordable home loan plans.
+                    </p>
+                    <a href="#" class="learn-more-link inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Personal Loan Card -->
+            <div class="service-card bg-white  m-2  rounded-3xl overflow-hidden shadow-lg">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop" 
+                         alt="Personal Loan" 
+                         class="service-image w-full h-64 object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-4">Personal Loan</h3>
+                    <p class="text-gray-600 mb-6">
+                       Get instant financial support for your needs with flexible and hassle-free personal loans from 360 Finvest.
+                    </p>
+                    <a href="#" class="learn-more-link inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Grid - Row 2 -->
+        <div class="grid md:grid-cols-3  m-2  gap-8 mb-12">
+            <!-- Insurance Card -->
+            <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop" 
+                         alt="Insurance" 
+                         class="service-image w-full h-56 object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">Insurance</h3>
+                    <p class="text-gray-600 mb-6">
+                        Protect what matters most with 360 Finvest’s wide range of life, health, and asset insurance plans.
+                    </p>
+                    <a href="#" class="learn-more-link inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Forex Trading Card -->
+            <div class="service-card bg-white  m-2  rounded-3xl overflow-hidden shadow-lg">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=300&fit=crop" 
+                         alt="Forex Trading" 
+                         class="service-image w-full h-56 object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">Demat & Investment Tools</h3>
+                    <p class="text-gray-600 mb-6">
+                        Simplify investing with a secure Demat account and powerful financial tools — all in one platform.
+                    </p>
+                    <a href="#" class="learn-more-link inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3">
+                        Learn More
+                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Business Loans Card -->
+            <div class="service-card bg-white  m-2  rounded-3xl overflow-hidden shadow-lg">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=300&fit=crop" 
+                         alt="Business Loans" 
+                         class="service-image w-full h-56 object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">Business Loans</h3>
+                    <p class="text-gray-600 mb-6">
+                       360 Finvest supports entrepreneurs with quick, secure, and growth-driven business loan options.
+                    </p>
+                    <a href="#" class="learn-more-link inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollTop" class="fixed bottom-8 right-8 bg-white hover:bg-gray-100 text-gray-800 p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
+    </div>
+
+
+    
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top-btn" id="scrollTopBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+
+    </div>
+
+     <div class="max-w-7xl mt-5 mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Take a look at our latest
+                </h1>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    articles & resources
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Find latest finance news from every corner of the globe at 360 Finvest.
+                </p>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2   gap-8">
+                <!-- Featured Article (Left) -->
+                <div class="card-hover bg-white  m-2  rounded-2xl overflow-hidden shadow-lg">
+                    <div class="img-overlay">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop" 
+                             alt="Insurance Contract" 
+                             class="w-full h-80 object-cover img-zoom">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="badge-pill bg-sky-500 text-white">Trading Markets</span>
+                            <span class="author-meta">June 20, 2025</span>
+                            <span class="author-meta">By <span class="font-medium">admin</span></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 hover:text-sky-500 transition-colors cursor-pointer">
+                            How to easily understand your insurance contract
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            There are certain types of insurance most people need to have. For example, 
+                            if you own a home then homeowner's insurance may be standard. Auto insurance 
+                            covers your vehicle while life insurance protects you and your...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column - Three Smaller Cards -->
+                <div class="space-y-8">
+                    <!-- Card 1 -->
+                    <div class="card-hover bg-white rounded-2xl  m-2 overflow-hidden shadow-lg flex flex-col sm:flex-row">
+                        <div class="img-overlay sm:w-2/5">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" 
+                                 alt="Trading Screen" 
+                                 class="w-full h-48 sm:h-full object-cover img-zoom">
+                        </div>
+                        <div class="p-6 sm:w-3/5">
+                            <span class="badge-pill bg-sky-500 text-white inline-block mb-3">Mortgages</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-sky-500 transition-colors cursor-pointer">
+                                Wages and benefits growth deals yet another blow
+                            </h3>
+                            <div class="author-meta">
+                                <span>June 20, 2025</span>
+                                <span class="mx-2">By</span>
+                                <span class="font-medium">admin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card-hover bg-white rounded-2xl  m-2 overflow-hidden shadow-lg flex flex-col sm:flex-row">
+                        <div class="img-overlay sm:w-2/5">
+                            <img src="./images/calculating.png" 
+                                 alt="Financial Planning" 
+                                 class="w-full h-48 sm:h-full object-cover img-zoom">
+                        </div>
+                        <div class="p-6 sm:w-3/5">
+                            <span class="badge-pill bg-cyan-500 text-white inline-block mb-3">Investment</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-sky-500 transition-colors cursor-pointer">
+                                The basics of financial responsibility
+                            </h3>
+                            <div class="author-meta">
+                                <span>June 20, 2025</span>
+                                <span class="mx-2">By</span>
+                                <span class="font-medium">admin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card-hover bg-white rounded-2xl  m-2 overflow-hidden shadow-lg flex flex-col sm:flex-row">
+                        <div class="img-overlay sm:w-2/5">
+                            <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=400&h=300&fit=crop" 
+                                 alt="Mortgage Meeting" 
+                                 class="w-full h-48 sm:h-full object-cover img-zoom">
+                        </div>
+                        <div class="p-6 sm:w-3/5">
+                            <span class="badge-pill bg-sky-500 text-white inline-block mb-3">Insurance</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-sky-500 transition-colors cursor-pointer">
+                                6 Tips for Getting Approved for a Mortgage
+                            </h3>
+                            <div class="author-meta">
+                                <span>June 20, 2025</span>
+                                <span class="mx-2">By</span>
+                                <span class="font-medium">admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
+        <!-- Partners Section -->
+        <div class="bg-gradient-to-br  mt-[100px] from-cyan-50 to-blue-50 rounded-3xl py-16 px-8 shadow-lg">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Our Partners</h2>
+            
+            <!-- Marquee Container -->
+            <div class="relative overflow-hidden">
+                <!-- Gradient Overlays -->
+                <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-cyan-50 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-blue-50 to-transparent z-10"></div>
+                
+                <!-- Scrolling Content -->
+                <div class="flex animate-scroll">
+                    <!-- First Set of Logos -->
+                    <div class="flex items-center gap-16 px-8">
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class=" text-white px-4 py-2 rounded font-bold text-sm mb-1">
+                                    <img src="./images/ImageDownloader_www.mymoneymantra.com_Bajaj_85e6a86740.avif" alt="">
+                                </div>
+                               
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="flex items-center gap-3">
+                                
+                               <img src="./images/ImageDownloader_www.mymoneymantra.com_HSBC_Logo_833a2667a1.avif" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="flex items-center gap-3">
+                                
+                                <div class="text-sm text-gray-700">
+                                    <div class="font-semibold">
+                                        <img src="./images/ImageDownloader_www.mymoneymantra.com_poonawalla_fincorp_2_645e41b0dd.avif" alt="">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_IDFC_First_Bank_d21b7112b9.avif" alt="">
+                            </div>
+                        </div>
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_incred_2f5eb1d490.avif" alt="">
+                            </div>
+                        </div>
+
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_kotak_mahindra_bank_2_27fbe02a8a.avif" alt="">
+                            </div>
+                        </div>
+
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_Ram_Fincorp_Logo_31f77c77e2.avif" alt="">
+                            </div>
+                        </div>
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_Tata_be9affa6f7.avif" alt="">
+                            </div>
+                        </div>
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_Unity_Small_Finnace_Bank_e7d2ec53d7.avif" alt="">
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="flex items-center gap-16 px-8">
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class=" text-white px-4 py-2 rounded font-bold text-sm mb-1">
+                                    <img src="./images/ImageDownloader_www.mymoneymantra.com_Bajaj_85e6a86740.avif" alt="">
+                                </div>
+                               
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="flex items-center gap-3">
+                                
+                               <img src="./images/ImageDownloader_www.mymoneymantra.com_HSBC_Logo_833a2667a1.avif" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="flex items-center gap-3">
+                                
+                                <div class="text-sm text-gray-700">
+                                    <div class="font-semibold">
+                                        <img src="./images/ImageDownloader_www.mymoneymantra.com_poonawalla_fincorp_2_645e41b0dd.avif" alt="">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_IDFC_First_Bank_d21b7112b9.avif" alt="">
+                            </div>
+                        </div>
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_incred_2f5eb1d490.avif" alt="">
+                            </div>
+                        </div>
+
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_kotak_mahindra_bank_2_27fbe02a8a.avif" alt="">
+                            </div>
+                        </div>
+
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_Ram_Fincorp_Logo_31f77c77e2.avif" alt="">
+                            </div>
+                        </div>
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_Tata_be9affa6f7.avif" alt="">
+                            </div>
+                        </div>
+
+                         <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-64 h-32 flex items-center justify-center">
+                            <div class="text-center">
+                            
+                                <img src="./images/ImageDownloader_www.mymoneymantra.com_Unity_Small_Finnace_Bank_e7d2ec53d7.avif" alt="">
+                            </div>
+                        </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        
+
+        <!-- Header Features -->
+    <header class="footer-header">
+    <div class="container  mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="./images/logo.png" alt="360 Finvest Logo" class="h-12">
+            </div>
+            
+            <!-- Features -->
+            <div class="hidden md:flex flex-wrap items-center gap-8">
+                <div class="flex items-center  space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">24/7 Support</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Weekly updates</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">Secure and compliant</span>
+                </div>
+                <div class="flex items-center space-x-2 fp-feature-badge">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-white whitespace-nowrap">99.9% Uptime</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Footer -->
+    <footer class="fp-main-footer bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <!-- Product Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Loans</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/home-loan.html" class="fp-footer-link text-gray-600 block">Hoam Loan</a></li>
+                        <li><a href="/personal-loan.html" class="fp-footer-link text-gray-600 block">Personal Loan</a></li>
+                        <li><a href="/bussiness-loans.html" class="fp-footer-link text-gray-600 block">Bussiness Loan</a></li>
+                        <li><a href="/loan-aginst-property.html" class="fp-footer-link text-gray-600 block">Loan Against Property</a></li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+
+
+                   <!-- Resources Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Insurance</h3>
+                    <ul class="space-y-4">
+                          <li><a href="/health-insurance.html" class="fp-footer-link text-gray-600 block">Health Insurance</a></li>
+                          <li><a href="/life-insurance.html" class="fp-footer-link text-gray-600 block">Life Insurance</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/index.html" class="fp-footer-link text-gray-600 block">Home</a></li>
+                        <li><a href="/aboutus.html" class="fp-footer-link text-gray-600 block">About Us</a></li>
+                        <li><a href="/blog.html" class="fp-footer-link text-gray-600 block">Blog</a></li>
+                        <li><a href="/contact.html" class="fp-footer-link text-gray-600 block">Contact</a></li>
+                        
+                    </ul>
+                </div>
+
+
+                <!-- Company Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">Demat and Investment Tools</h3>
+                    <ul class="space-y-4">
+                        <li><a href="/open-demat-account.html" class="fp-footer-link text-gray-600 block">Open Demat Account</a></li>
+                        <li><a href="/emi-Calculater.html" class="fp-footer-link text-gray-600 block">EMI Calculater</a></li>
+                        <li><a href="/equity.html" class="fp-footer-link text-gray-600 block">Equity</a></li>
+                        
+                        
+                    </ul>
+                </div>
+
+             
+
+             
+                <!-- Contact Column -->
+                <div class="fp-footer-column">
+                    <h3 class="text-gray-900 font-semibold text-lg mb-6">CONTACT</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:+18341234567899" class="fp-footer-link text-gray-600  block">+91 7982894555</a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@example.com" class="fp-footer-link text-gray-600 block">info@360finvest.com</a>
+                        </li>
+                        <li class="text-gray-600 leading-relaxed">
+                           Imperia Bandhan, B-Block Office No-311, Plot no. 44-45, Sector Knowledge Park 5, Greater Noida West
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="fp-divider h-px"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm">
+                    Copyright © 2024 <span class="font-semibold text-grey-400"> 360 Finvest </span> All rights reserved
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="fp-social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex items-center space-x-6  text-sm">
+                    <a href="/privacy-policy.html" class="text-gray-500 hover:text-blue-500 transition-colors">Privacy Policy</a>
+                   
+                    <a href="/terms-conditions.html" class="text-gray-500 hover:text-blue-500 transition-colors">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="fp-scroll-top fixed bottom-8 right-8 w-12 h-12 bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script>
+        // Scroll to top functionality
+      
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add smooth scroll to all footer links
+        document.querySelectorAll('.fp-footer-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Link clicked:', e.target.textContent);
+            });
+        });
+    </script>
+
+
+      <script>
+        // Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const suffix = element.getAttribute('data-suffix') || '';
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if (counter.textContent === '0' || counter.textContent === '0K' || counter.textContent === '0%' || counter.textContent === '0B') {
+                            animateCounter(counter);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe the statistics section
+        const statsSection = document.querySelector('section');
+        observer.observe(statsSection);
+    </script>
+
+    <script>
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth hover effects to cards
+        const cards = document.querySelectorAll('.card-hover');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Lazy loading simulation for images
+        const images = document.querySelectorAll('img');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        img.style.opacity = '1';
+                    }, 100);
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+    </script>
+
+    <script>
+        // Scroll to top functionality
+   
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth scroll for Learn More links
+        document.querySelectorAll('.learn-more-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Learn more clicked for:', e.currentTarget.closest('.service-card').querySelector('h3').textContent);
+            });
+        });
+
+        // View All Services button
+        document.querySelector('button').addEventListener('click', () => {
+            console.log('View All Services clicked');
+        });
+    </script>
+
+    <script>
+      // Mobile menu toggle
+      (function(){
+        const btn = document.getElementById('mobileMenuButton');
+        const menu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('mobileMenuClose');
+
+        function openMenu() {
+          menu.classList.remove('translate-x-full');
+          menu.classList.add('translate-x-0');
+        }
+        function closeMenu() {
+          menu.classList.add('translate-x-full');
+          menu.classList.remove('translate-x-0');
+        }
+
+        btn && btn.addEventListener('click', openMenu);
+        closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+        // close on outside click
+        document.addEventListener('click', (e) => {
+          if (!menu.contains(e.target) && !btn.contains(e.target) && window.getComputedStyle(menu).transform !== 'none') {
+            if (!menu.classList.contains('translate-x-full')) closeMenu();
+          }
+        });
+
+        // ensure menu is hidden when resizing to desktop
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 768) closeMenu();
+        });
+      })();
+    </script>
+
+    <script>
+      // Add this to your existing script section
+document.querySelectorAll('#mobileMenu button').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const dropdown = e.currentTarget.nextElementSibling;
+    const icon = e.currentTarget.querySelector('svg');
+    
+    // Close all other dropdowns first
+    document.querySelectorAll('#mobileMenu button + div').forEach(otherDropdown => {
+      if (otherDropdown !== dropdown && otherDropdown.classList.contains('block')) {
+        otherDropdown.classList.remove('block');
+        otherDropdown.classList.add('hidden');
+        const otherIcon = otherDropdown.previousElementSibling.querySelector('svg');
+        otherIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Toggle current dropdown
+    if (dropdown.classList.contains('hidden')) {
+      dropdown.classList.remove('hidden');
+      dropdown.classList.add('block');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      dropdown.classList.remove('block');
+      dropdown.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  });
+});
+
+// Initialize all dropdowns as hidden
+document.querySelectorAll('#mobileMenu button + div').forEach(dropdown => {
+  dropdown.classList.add('hidden');
+});
+    </script>
+    
+   </body>
+</html>

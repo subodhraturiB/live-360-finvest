@@ -1,0 +1,729 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+
+* {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.Hero-section{
+   background: linear-gradient(135deg, #0a1628 0%, #1a2d4d 50%, #0d4b6e 100%);
+   /* use min-height so mobile toolbars don't cut content */
+   min-height: 75vh;
+   padding-bottom: 3rem;
+}
+
+@keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .animate-scroll {
+            animation: scroll 15s linear infinite;
+             
+            
+        }
+        
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+
+
+
+
+.footer-header{
+   background: linear-gradient(135deg, #0a1628 0%, #1a2d4d 50%, #0d4b6e 100%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    padding: 2rem 0;
+    margin-top: 100px;
+}
+
+
+.blue-gradient{
+     background: linear-gradient(135deg, #0a1628 0%, #1a2d4d 50%, #0d4b6e 100%);
+}
+   
+
+
+ @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .rotating-text {
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .stat-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .stat-card:nth-child(1) { animation-delay: 0.2s; }
+        .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) { animation-delay: 0.6s; }
+        .stat-card:nth-child(4) { animation-delay: 0.8s; }
+
+
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+        
+        .learn-more-link {
+            transition: gap 0.3s ease;
+        }
+        
+        .learn-more-link:hover {
+            gap: 0.75rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .badge-pill {
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.375rem 1rem;
+            text-transform: capitalize;
+        }
+        
+        .img-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .img-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .img-overlay:hover::after {
+            opacity: 1;
+        }
+        
+        .img-zoom {
+            transition: transform 0.5s ease;
+        }
+        
+        .img-overlay:hover .img-zoom {
+            transform: scale(1.1);
+        }
+        
+        .author-meta {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .featured-card {
+            position: relative;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top-btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-4px);
+        }
+        
+        .scroll-top-btn:hover svg {
+            stroke: white;
+        }
+
+         .fp-footer-link {
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .fp-footer-link:hover {
+            color: #3b82f6;
+            transform: translateX(4px);
+        }
+        
+        .fp-social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .fp-social-icon:hover {
+            transform: translateY(-4px);
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .fp-scroll-top {
+            transition: all 0.3s ease;
+        }
+        
+        .fp-scroll-top:hover {
+            background-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+        
+        .fp-feature-badge {
+            animation: fp-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes fp-pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+        
+        .fp-divider {
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+        }
+
+        /* loans page */
+      
+
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        
+
+        /* Header Navigation */
+        .finvest-navbar {
+            
+            
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .finvest-navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .finvest-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .finvest-nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .finvest-nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .finvest-nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .finvest-loans-hero {
+            color: black;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .finvest-hero-content {
+            max-width: 700px;
+        }
+
+        .finvest-hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .finvest-hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Loan Types Navigation */
+        .finvest-loan-types-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .finvest-loan-type-card {
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .finvest-loan-type-card:hover {
+            border-color: var(--primary-color);
+            background: white;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .finvest-loan-type-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .finvest-loan-type-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tab System */
+        .finvest-loan-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: none;
+        }
+
+        .finvest-loan-container.finvest-active-tab {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Tabs */
+        .finvest-tab-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .finvest-tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -1rem;
+        }
+
+        .finvest-tab-btn:hover,
+        .finvest-tab-btn.finvest-tab-active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* Content Sections */
+        .finvest-tab-content {
+            display: none;
+        }
+
+        .finvest-tab-content.finvest-content-active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        .finvest-section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .finvest-overview-section {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .finvest-overview-text {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Eligibility Section */
+        .finvest-eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .finvest-eligibility-item {
+            background: white;
+            border-left: 4px solid var(--success-color);
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .finvest-eligibility-label {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .finvest-eligibility-value {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Documents Section */
+        .finvest-documents-list {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .finvest-document-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .finvest-document-item:last-child {
+            border-bottom: none;
+        }
+
+        .finvest-document-checkbox {
+            width: 20px;
+            height: 20px;
+            background: var(--success-color);
+            border-radius: 3px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .finvest-document-text {
+            flex: 1;
+            color: var(--text-dark);
+        }
+
+        /* Interest Rate & EMI Section */
+        .finvest-emi-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .finvest-emi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .finvest-emi-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .finvest-emi-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .finvest-emi-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* CTA Form */
+        .finvest-cta-section {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 2px solid var(--accent-color);
+        }
+
+        .finvest-form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .finvest-form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .finvest-form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .finvest-form-input,
+        .finvest-form-select,
+        .finvest-form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .finvest-form-input:focus,
+        .finvest-form-select:focus,
+        .finvest-form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .finvest-form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .finvest-apply-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .finvest-apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .finvest-apply-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .finvest-footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .finvest-hero-title {
+                font-size: 1.8rem;
+            }
+
+            .finvest-nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .finvest-tab-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .finvest-tab-btn {
+                width: 100%;
+                text-align: left;
+                margin-bottom: -0.5rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .finvest-loan-types-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-header .container {
+        padding: 1rem;
+    }
+    
+    .footer-header .flex-wrap {
+        justify-content: center;
+    }
+        }
+
+        /* Success Message */
+        .finvest-success-message {
+            display: none;
+            background: var(--success-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .finvest-success-message.finvest-show {
+            display: block;
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
