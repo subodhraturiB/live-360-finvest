@@ -21,9 +21,16 @@ h6 {
 .Hero-section {
     background: linear-gradient(135deg, #0a1628 0%, #1a2d4d 50%, #0d4b6e 100%);
     min-height: 100vh;
+   
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 724px) {
+  .Hero-section {
+    padding: 20px;
+  }
 }
 
 .hero-content {
@@ -750,7 +757,8 @@ h6 {
             to { transform: translateY(0); opacity: 1; }
         }
 
-        .testimonial {
+
+ .testimonial {
             display: none;
             animation: fadeIn 0.5s ease-in-out;
         }
