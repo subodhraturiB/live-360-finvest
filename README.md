@@ -1,5 +1,7 @@
 # 360-Finvest-Website
 
+#0070b4
+
 🏦 Project Name: 360 Finvest
 
 Tagline (suggestion): Your Trusted Partner in Finance & Growth

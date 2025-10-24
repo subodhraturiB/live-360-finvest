@@ -1090,7 +1090,6 @@
         // Add smooth scroll to all footer links
         document.querySelectorAll('.fp-footer-link').forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
                 console.log('Link clicked:', e.target.textContent);
             });
         });
@@ -1211,7 +1210,7 @@
         // Add smooth scroll for Learn More links
         document.querySelectorAll('.learn-more-link').forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
+                
                 console.log('Learn more clicked for:', e.currentTarget.closest('.service-card').querySelector('h3').textContent);
             });
         });
