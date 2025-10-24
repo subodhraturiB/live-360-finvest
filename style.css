@@ -749,3 +749,18 @@ h6 {
             from { transform: translateY(-20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        .testimonial {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .testimonial.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dot {
+            transition: all 0.3s ease;
+        }
